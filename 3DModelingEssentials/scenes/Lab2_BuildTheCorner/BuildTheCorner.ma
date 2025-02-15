@@ -1,6 +1,6 @@
 //Maya ASCII 2024 scene
 //Name: BuildTheCorner.ma
-//Last modified: Sat, Feb 15, 2025 01:06:21 PM
+//Last modified: Sat, Feb 15, 2025 01:12:19 PM
 //Codeset: 1252
 requires maya "2024";
 requires -nodeType "aiOptions" -nodeType "aiAOVDriver" -nodeType "aiAOVFilter" "mtoa" "5.3.4.1";
@@ -12,17 +12,17 @@ fileInfo "product" "Maya 2024";
 fileInfo "version" "2024";
 fileInfo "cutIdentifier" "202310181224-69282f2959";
 fileInfo "osv" "Windows 11 Home v2009 (Build: 26100)";
-fileInfo "UUID" "A6126ABC-4297-1A6D-7D90-8DB180512F80";
+fileInfo "UUID" "261BE70E-4AE8-C0BF-FA92-A7920EF5C981";
 createNode transform -s -n "persp";
 	rename -uid "937B2EDB-495B-23AE-38DB-E4891CA1AC59";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 12.404897666749635 10.030907075792376 15.01879933376601 ;
-	setAttr ".r" -type "double3" -23.738352729603285 40.200000000000358 0 ;
+	setAttr ".t" -type "double3" 10.66284058449186 9.5392903707818171 10.924872487938016 ;
+	setAttr ".r" -type "double3" -27.338352729603486 43.000000000000689 0 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "6A068267-4C39-2EFB-A032-139887CD0243";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999993;
-	setAttr ".coi" 22.114713364183267;
+	setAttr ".coi" 17.782081946671347;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -86,6 +86,7 @@ createNode mesh -n "pCubeShape1" -p "pCube1";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
 	setAttr ".vif" yes;
+	setAttr ".pv" -type "double2" 0.375 0.5 ;
 	setAttr ".uvst[0].uvsn" -type "string" "map1";
 	setAttr ".cuvs" -type "string" "map1";
 	setAttr ".dcc" -type "string" "Ambient+Diffuse";
@@ -172,8 +173,22 @@ createNode aiAOVDriver -s -n "defaultArnoldDisplayDriver";
 createNode polyCube -n "polyCube1";
 	rename -uid "96EA1A1A-419F-4C3B-FB2A-B2B74EBC79E4";
 	setAttr ".cuv" 4;
+createNode deleteComponent -n "deleteComponent1";
+	rename -uid "98505DDA-453A-1E85-0E4D-6389EA202325";
+	setAttr ".dc" -type "componentList" 2 "f[0:1]" "f[4]";
+createNode polyExtrudeFace -n "polyExtrudeFace1";
+	rename -uid "DFE93F14-4478-6570-B3BD-4FB499BB67BE";
+	setAttr ".ics" -type "componentList" 1 "f[0:2]";
+	setAttr ".ix" -type "matrix" 4 0 0 0 0 4 0 0 0 0 4 0 0 2 0 1;
+	setAttr ".ws" yes;
+	setAttr ".s" -type "double3" 1.065 1.065 1.065 ;
+	setAttr ".pvt" -type "float3" 0 2 0 ;
+	setAttr ".rs" 39408;
+	setAttr ".c[0]"  0 1 1;
+	setAttr ".cbn" -type "double3" -2 0 -2 ;
+	setAttr ".cbx" -type "double3" 2 4 2 ;
 createNode mayaUsdLayerManager -n "mayaUsdLayerManager1";
-	rename -uid "5031F613-4DC4-CCA1-9358-918D2940DA3B";
+	rename -uid "3EDFFA10-4F10-F8D7-56DC-1A8B72204E52";
 	setAttr ".sst" -type "string" "";
 select -ne :time1;
 	setAttr ".o" 1;
@@ -220,7 +235,7 @@ select -ne :hardwareRenderGlobals;
 	setAttr ".btrs" 512;
 select -ne :ikSystem;
 	setAttr -s 4 ".sol";
-connectAttr "polyCube1.out" "pCubeShape1.i";
+connectAttr "polyExtrudeFace1.out" "pCubeShape1.i";
 relationship "link" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
 relationship "link" ":lightLinker1" ":initialParticleSE.message" ":defaultLightSet.message";
 relationship "shadowLink" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
@@ -231,6 +246,9 @@ connectAttr ":defaultArnoldDisplayDriver.msg" ":defaultArnoldRenderOptions.drive
 		 -na;
 connectAttr ":defaultArnoldFilter.msg" ":defaultArnoldRenderOptions.filt";
 connectAttr ":defaultArnoldDriver.msg" ":defaultArnoldRenderOptions.drvr";
+connectAttr "polyCube1.out" "deleteComponent1.ig";
+connectAttr "deleteComponent1.og" "polyExtrudeFace1.ip";
+connectAttr "pCubeShape1.wm" "polyExtrudeFace1.mp";
 connectAttr "defaultRenderLayer.msg" ":defaultRenderingList1.r" -na;
 connectAttr "pCubeShape1.iog" ":initialShadingGroup.dsm" -na;
 // End of BuildTheCorner.ma
