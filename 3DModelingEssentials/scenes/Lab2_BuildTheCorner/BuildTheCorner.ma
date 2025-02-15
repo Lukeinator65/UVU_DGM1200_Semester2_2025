@@ -1,6 +1,6 @@
 //Maya ASCII 2024 scene
 //Name: BuildTheCorner.ma
-//Last modified: Sat, Feb 15, 2025 01:18:47 PM
+//Last modified: Sat, Feb 15, 2025 01:19:35 PM
 //Codeset: 1252
 requires maya "2024";
 requires -nodeType "aiOptions" -nodeType "aiAOVDriver" -nodeType "aiAOVFilter" "mtoa" "5.3.4.1";
@@ -12,7 +12,7 @@ fileInfo "product" "Maya 2024";
 fileInfo "version" "2024";
 fileInfo "cutIdentifier" "202310181224-69282f2959";
 fileInfo "osv" "Windows 11 Home v2009 (Build: 26100)";
-fileInfo "UUID" "D5FE6F40-4BB7-CDEC-21FA-BDA83D9F1D89";
+fileInfo "UUID" "A2756392-4CF5-914D-EF06-7489A5888F1C";
 createNode transform -s -n "persp";
 	rename -uid "937B2EDB-495B-23AE-38DB-E4891CA1AC59";
 	setAttr ".v" no;
@@ -79,7 +79,7 @@ createNode camera -s -n "sideShape" -p "side";
 	setAttr ".ai_translator" -type "string" "orthographic";
 createNode transform -n "LivingRoom";
 	rename -uid "B3CE94CD-42B2-B0B1-A6C0-08BE7F18AE74";
-	setAttr ".t" -type "double3" 0 3.2 0 ;
+	setAttr ".t" -type "double3" 0 3 0 ;
 	setAttr ".s" -type "double3" 6 6 6 ;
 createNode mesh -n "LivingRoomShape" -p "LivingRoom";
 	rename -uid "6C321794-4CB5-48AD-EB81-F2AD4D35871A";
@@ -195,7 +195,7 @@ createNode polyExtrudeFace -n "polyExtrudeFace1";
 	setAttr ".cbn" -type "double3" -2 0 -2 ;
 	setAttr ".cbx" -type "double3" 2 4 2 ;
 createNode mayaUsdLayerManager -n "mayaUsdLayerManager1";
-	rename -uid "C68A81CE-4AA9-8B1E-BA6E-58A0AFFAD86F";
+	rename -uid "A8E3BFA5-48C2-3157-A862-658C329AB216";
 	setAttr ".sst" -type "string" "";
 select -ne :time1;
 	setAttr ".o" 1;
