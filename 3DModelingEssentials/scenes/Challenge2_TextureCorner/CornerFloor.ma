@@ -1,6 +1,6 @@
 //Maya ASCII 2025ff03 scene
 //Name: CornerFloor.ma
-//Last modified: Thu, Feb 20, 2025 01:45:49 PM
+//Last modified: Thu, Feb 20, 2025 01:50:21 PM
 //Codeset: 1252
 requires maya "2025ff03";
 requires "stereoCamera" "10.0";
@@ -11,17 +11,17 @@ fileInfo "product" "Maya 2025";
 fileInfo "version" "2025";
 fileInfo "cutIdentifier" "202409190603-cbdc5a7e54";
 fileInfo "osv" "Windows 10 Home v2009 (Build: 19045)";
-fileInfo "UUID" "9D50EAB0-4048-D0C2-DBB9-228C4FD4D903";
+fileInfo "UUID" "86F77434-4912-CE39-F52D-159E488569E2";
 createNode transform -s -n "persp";
 	rename -uid "937B2EDB-495B-23AE-38DB-E4891CA1AC59";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 7.6254880757241033 6.5118246204403194 13.575324442716767 ;
-	setAttr ".r" -type "double3" -22.538352729660083 29.799999999989236 9.1630597562835022e-16 ;
+	setAttr ".t" -type "double3" 12.245674114885107 11.721708718004882 22.916749991809407 ;
+	setAttr ".r" -type "double3" -20.138352729684307 26.200000000002195 8.8618696380007005e-16 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "6A068267-4C39-2EFB-A032-139887CD0243";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999993;
-	setAttr ".coi" 16.930505821348593;
+	setAttr ".coi" 26.619944624744726;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -1516,6 +1516,23 @@ createNode mesh -n "TileShape4" -p "|TileRow06|Tile04";
 	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
+createNode transform -n "pCube1";
+	rename -uid "A51863F2-4F02-496B-0916-E4A810CE88C5";
+	setAttr ".t" -type "double3" 1 2.5000000254516781 -3 ;
+	setAttr ".s" -type "double3" 2.5 4 1 ;
+	setAttr ".rp" -type "double3" 0 -2.5000000254516777 0 ;
+	setAttr ".sp" -type "double3" 0 -0.50000000509033549 0 ;
+	setAttr ".spt" -type "double3" 0 -2.0000000203613442 0 ;
+createNode mesh -n "pCubeShape1" -p "pCube1";
+	rename -uid "44AD7539-440A-1D6A-8B32-76B027B4EA86";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
 createNode lightLinker -s -n "lightLinker1";
 	rename -uid "EF773D9D-4633-C27A-2A38-03A9B3695317";
 	setAttr -s 6 ".lnk";
@@ -1657,16 +1674,16 @@ createNode shadingEngine -n "lambert3SG";
 createNode materialInfo -n "materialInfo4";
 	rename -uid "0005AECB-4B93-74A0-0134-638FE9943DB6";
 createNode nodeGraphEditorInfo -n "hyperShadePrimaryNodeEditorSavedTabsInfo";
-	rename -uid "9496AB0A-4D24-929A-4AFF-46952A9CF8E8";
+	rename -uid "D9097C00-4B09-9E29-5D7B-98B22D39B128";
 	setAttr ".tgi[0].tn" -type "string" "Untitled_1";
 	setAttr ".tgi[0].vl" -type "double2" -44.047617297323995 -615.47616601936511 ;
 	setAttr ".tgi[0].vh" -type "double2" 604.76188073082676 44.047617297323995 ;
 	setAttr -s 6 ".tgi[0].ni";
-	setAttr ".tgi[0].ni[0].x" 31.428571701049805;
+	setAttr ".tgi[0].ni[0].x" 338.57144165039062;
 	setAttr ".tgi[0].ni[0].y" -145.71427917480469;
 	setAttr ".tgi[0].ni[0].nvs" 1923;
-	setAttr ".tgi[0].ni[1].x" 338.57144165039062;
-	setAttr ".tgi[0].ni[1].y" -101.42857360839844;
+	setAttr ".tgi[0].ni[1].x" 31.428571701049805;
+	setAttr ".tgi[0].ni[1].y" -145.71427917480469;
 	setAttr ".tgi[0].ni[1].nvs" 1923;
 	setAttr ".tgi[0].ni[2].x" 338.57144165039062;
 	setAttr ".tgi[0].ni[2].y" -145.71427917480469;
@@ -1674,12 +1691,15 @@ createNode nodeGraphEditorInfo -n "hyperShadePrimaryNodeEditorSavedTabsInfo";
 	setAttr ".tgi[0].ni[3].x" 338.57144165039062;
 	setAttr ".tgi[0].ni[3].y" -101.42857360839844;
 	setAttr ".tgi[0].ni[3].nvs" 1923;
-	setAttr ".tgi[0].ni[4].x" 31.428571701049805;
-	setAttr ".tgi[0].ni[4].y" -145.71427917480469;
+	setAttr ".tgi[0].ni[4].x" 338.57144165039062;
+	setAttr ".tgi[0].ni[4].y" -101.42857360839844;
 	setAttr ".tgi[0].ni[4].nvs" 1923;
-	setAttr ".tgi[0].ni[5].x" 338.57144165039062;
+	setAttr ".tgi[0].ni[5].x" 31.428571701049805;
 	setAttr ".tgi[0].ni[5].y" -145.71427917480469;
 	setAttr ".tgi[0].ni[5].nvs" 1923;
+createNode polyCube -n "polyCube2";
+	rename -uid "2C610550-4449-1803-9BD6-35ADAFC90696";
+	setAttr ".cuv" 4;
 select -ne :time1;
 	setAttr ".o" 1;
 	setAttr ".unw" 1;
@@ -1726,6 +1746,7 @@ select -ne :hardwareRenderGlobals;
 select -ne :ikSystem;
 	setAttr -s 4 ".sol";
 connectAttr "deleteComponent1.og" "|TileRow01|Tile01|TileShape1.i";
+connectAttr "polyCube2.out" "pCubeShape1.i";
 relationship "link" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
 relationship "link" ":lightLinker1" ":initialParticleSE.message" ":defaultLightSet.message";
 relationship "link" ":lightLinker1" "lambert2SG.message" ":defaultLightSet.message";
@@ -1778,17 +1799,17 @@ connectAttr "|TileRow01|Tile02|TileShape2.iog" "lambert3SG.dsm" -na;
 connectAttr "|TileRow01|Tile01|TileShape1.iog" "lambert3SG.dsm" -na;
 connectAttr "lambert3SG.msg" "materialInfo4.sg";
 connectAttr "TealColor.msg" "materialInfo4.m";
-connectAttr "PinkColor.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[0].dn"
+connectAttr "lambert3SG.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[0].dn"
 		;
-connectAttr "phong1SG.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[1].dn"
+connectAttr "TealColor.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[1].dn"
 		;
 connectAttr "lambert2SG.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[2].dn"
 		;
-connectAttr "blinn1SG.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[3].dn"
+connectAttr "phong1SG.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[3].dn"
 		;
-connectAttr "TealColor.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[4].dn"
+connectAttr "blinn1SG.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[4].dn"
 		;
-connectAttr "lambert3SG.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[5].dn"
+connectAttr "PinkColor.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[5].dn"
 		;
 connectAttr "lambert2SG.pa" ":renderPartition.st" -na;
 connectAttr "blinn1SG.pa" ":renderPartition.st" -na;
@@ -1797,4 +1818,5 @@ connectAttr "lambert3SG.pa" ":renderPartition.st" -na;
 connectAttr "PinkColor.msg" ":defaultShaderList1.s" -na;
 connectAttr "TealColor.msg" ":defaultShaderList1.s" -na;
 connectAttr "defaultRenderLayer.msg" ":defaultRenderingList1.r" -na;
+connectAttr "pCubeShape1.iog" ":initialShadingGroup.dsm" -na;
 // End of CornerFloor.ma
