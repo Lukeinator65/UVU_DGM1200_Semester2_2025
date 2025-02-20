@@ -1,6 +1,6 @@
 //Maya ASCII 2025ff03 scene
 //Name: DetailedAssets.ma
-//Last modified: Thu, Feb 20, 2025 04:01:40 PM
+//Last modified: Thu, Feb 20, 2025 04:02:54 PM
 //Codeset: 1252
 requires maya "2025ff03";
 requires "stereoCamera" "10.0";
@@ -12,17 +12,17 @@ fileInfo "product" "Maya 2025";
 fileInfo "version" "2025";
 fileInfo "cutIdentifier" "202409190603-cbdc5a7e54";
 fileInfo "osv" "Windows 10 Home v2009 (Build: 19045)";
-fileInfo "UUID" "8E1A9E29-4F15-1DD4-26FE-8489193D0DCF";
+fileInfo "UUID" "BE101D37-4B32-2078-1CCC-5B8F227EBB36";
 createNode transform -s -n "persp";
 	rename -uid "937B2EDB-495B-23AE-38DB-E4891CA1AC59";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 7.842805061314662 6.5693507234033373 12.092769354027807 ;
-	setAttr ".r" -type "double3" -17.738352729614654 -328.19999999963539 -1.8711507392176309e-15 ;
+	setAttr ".t" -type "double3" 10.391790367920294 5.417405104239009 10.561018982942104 ;
+	setAttr ".r" -type "double3" -13.538352729620982 -317.39999999958428 0 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "6A068267-4C39-2EFB-A032-139887CD0243";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999993;
-	setAttr ".coi" 16.322408264754483;
+	setAttr ".coi" 16.322408264754738;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -1835,7 +1835,7 @@ createNode mesh -n "PictureFrameShape" -p "PictureFrame";
 	setAttr ".dr" 1;
 createNode transform -n "Carpet";
 	rename -uid "8F576FBF-4260-B6C2-16A2-549DCC49892A";
-	setAttr ".t" -type "double3" 0.49470813543756686 0.59994171664974938 0 ;
+	setAttr ".t" -type "double3" 0.29645704863521471 0.59994171664974938 0 ;
 	setAttr ".s" -type "double3" 1.6250062357373789 0.12905675063958452 3.2540323190296525 ;
 	setAttr ".rp" -type "double3" 0 -0.49999995634815941 0 ;
 	setAttr ".sp" -type "double3" 0 -0.49999995634815941 0 ;
@@ -1884,7 +1884,7 @@ createNode mesh -n "CouchBackShape" -p "CouchBack";
 createNode transform -n "ArmRest01";
 	rename -uid "5F74BFFC-418C-4431-A7DC-9C980EF06C57";
 	setAttr ".t" -type "double3" -1.8305992451022717 0.59994172854631067 2.0646828020286674 ;
-	setAttr ".s" -type "double3" 1.0665751748029368 1.4827268415570274 0.42968253391822053 ;
+	setAttr ".s" -type "double3" 1.6217712156186428 1.4827268415570274 0.42968253391822053 ;
 	setAttr ".rp" -type "double3" -0.53328758808864629 -0.49999999804704298 0.21484128587721654 ;
 	setAttr ".sp" -type "double3" -0.50000000064428463 -0.49999998834439219 0.50000004402810294 ;
 	setAttr ".spt" -type "double3" -0.033287587444361631 -9.7026507661635009e-09 -0.28515875815088643 ;
@@ -1938,7 +1938,7 @@ createNode mesh -n "ArmRestShape1" -p "ArmRest01";
 createNode transform -n "ArmRest02";
 	rename -uid "5D99B124-401A-E106-73E7-B8B484A0EE8B";
 	setAttr ".t" -type "double3" -1.8305992451022717 0.59994172854631067 -2.0833388335849636 ;
-	setAttr ".s" -type "double3" 1.0665751748029368 1.4827268415570274 0.42968253391822053 ;
+	setAttr ".s" -type "double3" 1.6217712156186428 1.4827268415570274 0.42968253391822053 ;
 	setAttr ".rp" -type "double3" -0.53328758808864629 -0.49999999804704298 0.21484128587721654 ;
 	setAttr ".sp" -type "double3" -0.50000000064428463 -0.49999998834439219 0.50000004402810294 ;
 	setAttr ".spt" -type "double3" -0.033287587444361631 -9.7026507661635009e-09 -0.28515875815088643 ;
@@ -1992,7 +1992,7 @@ createNode mesh -n "ArmRestShape2" -p "ArmRest02";
 createNode transform -n "CouchBase";
 	rename -uid "6D65D669-4152-5F55-54D0-918B9208E091";
 	setAttr ".t" -type "double3" -1.5514541921887659 0.59994172854631067 -0.0084275007247924805 ;
-	setAttr ".s" -type "double3" 1.6248652842557325 0.67313073020987069 3.7165378584243869 ;
+	setAttr ".s" -type "double3" 1.6263997259363203 0.67313073020987069 3.7165378584243869 ;
 	setAttr ".rp" -type "double3" -0.81243264100215207 -0.49999999804704315 1.8582689762115479 ;
 	setAttr ".sp" -type "double3" -0.49999999930719541 -0.50000001251891779 0.50000001264600447 ;
 	setAttr ".spt" -type "double3" -0.31243264169495666 1.4471874643096072e-08 1.3582689635655434 ;
