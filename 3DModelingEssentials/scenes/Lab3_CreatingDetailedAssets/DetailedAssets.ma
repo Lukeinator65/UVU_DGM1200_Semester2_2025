@@ -1,6 +1,6 @@
 //Maya ASCII 2025ff03 scene
 //Name: DetailedAssets.ma
-//Last modified: Thu, Feb 20, 2025 03:41:43 PM
+//Last modified: Thu, Feb 20, 2025 03:44:50 PM
 //Codeset: 1252
 requires maya "2025ff03";
 requires "stereoCamera" "10.0";
@@ -12,12 +12,12 @@ fileInfo "product" "Maya 2025";
 fileInfo "version" "2025";
 fileInfo "cutIdentifier" "202409190603-cbdc5a7e54";
 fileInfo "osv" "Windows 10 Home v2009 (Build: 19045)";
-fileInfo "UUID" "CAF29435-4D60-7A47-92DF-BDB84852F219";
+fileInfo "UUID" "1766D290-45D7-CE88-9A12-73907BCDC3EB";
 createNode transform -s -n "persp";
 	rename -uid "937B2EDB-495B-23AE-38DB-E4891CA1AC59";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 5.7974131299109768 8.9363893110946648 13.55221907475228 ;
-	setAttr ".r" -type "double3" -20.738352729086852 -332.59999999995466 0 ;
+	setAttr ".t" -type "double3" 0.27008827283136583 5.9335006951846117 16.319290057913086 ;
+	setAttr ".r" -type "double3" -18.938352729104281 -353.39999999985548 -4.0022169818876009e-16 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "6A068267-4C39-2EFB-A032-139887CD0243";
 	setAttr -k off ".v" no;
@@ -1831,6 +1831,22 @@ createNode mesh -n "PictureFrameShape" -p "PictureFrame";
 	setAttr ".covm[0]"  0 1 1;
 	setAttr ".cdvm[0]"  0 1 1;
 	setAttr ".dr" 1;
+createNode transform -n "Carpet";
+	rename -uid "8F576FBF-4260-B6C2-16A2-549DCC49892A";
+	setAttr ".t" -type "double3" 0.49470813543756686 0.59994171664974938 0 ;
+	setAttr ".s" -type "double3" 1.6250062357373789 0.12905675063958452 3.2540323190296525 ;
+	setAttr ".rp" -type "double3" 0 -0.49999995634815941 0 ;
+	setAttr ".sp" -type "double3" 0 -0.49999995634815941 0 ;
+createNode mesh -n "CarpetShape" -p "Carpet";
+	rename -uid "7002F49D-4A62-D060-2088-3B923A33356E";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
 createNode lightLinker -s -n "lightLinker1";
 	rename -uid "47F523CA-49A6-AF97-3D12-3BA32C5643DF";
 	setAttr -s 6 ".lnk";
@@ -1972,6 +1988,9 @@ createNode nodeGraphEditorInfo -n "hyperShadePrimaryNodeEditorSavedTabsInfo";
 createNode polyCube -n "polyCube1";
 	rename -uid "A0CFA7F4-4D88-7E7D-D950-43826452C47F";
 	setAttr ".cuv" 4;
+createNode polyCube -n "polyCube2";
+	rename -uid "AF4E4CB4-471B-4A36-95EC-C08B63277D43";
+	setAttr ".cuv" 4;
 select -ne :time1;
 	setAttr ".o" 1;
 	setAttr ".unw" 1;
@@ -1994,6 +2013,7 @@ select -ne :standardSurface1;
 	setAttr ".bc" -type "float3" 0.40000001 0.40000001 0.40000001 ;
 	setAttr ".sr" 0.5;
 select -ne :initialShadingGroup;
+	setAttr -s 2 ".dsm";
 	setAttr ".ro" yes;
 select -ne :initialParticleSE;
 	setAttr ".ro" yes;
@@ -2018,6 +2038,7 @@ select -ne :hardwareRenderGlobals;
 select -ne :ikSystem;
 	setAttr -s 4 ".sol";
 connectAttr "polyCube1.out" "PictureFrameShape.i";
+connectAttr "polyCube2.out" "CarpetShape.i";
 relationship "link" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
 relationship "link" ":lightLinker1" ":initialParticleSE.message" ":defaultLightSet.message";
 relationship "link" ":lightLinker1" "lambert2SG.message" ":defaultLightSet.message";
@@ -2087,4 +2108,5 @@ connectAttr "PinkColor.msg" ":defaultShaderList1.s" -na;
 connectAttr "TealColor.msg" ":defaultShaderList1.s" -na;
 connectAttr "defaultRenderLayer.msg" ":defaultRenderingList1.r" -na;
 connectAttr "PictureFrameShape.iog" ":initialShadingGroup.dsm" -na;
+connectAttr "CarpetShape.iog" ":initialShadingGroup.dsm" -na;
 // End of DetailedAssets.ma
