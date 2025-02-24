@@ -1,6 +1,6 @@
 //Maya ASCII 2025ff03 scene
-//Name: LightingAndRendering.ma
-//Last modified: Mon, Feb 24, 2025 09:43:36 AM
+//Name: RefineLightingAndRendering.ma
+//Last modified: Mon, Feb 24, 2025 10:03:16 AM
 //Codeset: 1252
 requires maya "2025ff03";
 requires "stereoCamera" "10.0";
@@ -13,18 +13,18 @@ fileInfo "product" "Maya 2025";
 fileInfo "version" "2025";
 fileInfo "cutIdentifier" "202409190603-cbdc5a7e54";
 fileInfo "osv" "Windows 10 Home v2009 (Build: 19045)";
-fileInfo "UUID" "F1BA3158-4F53-0D96-0BB3-0486FCDAA6A0";
+fileInfo "UUID" "909FDA52-4433-DEE8-278C-FDB5FE3D2782";
 createNode transform -s -n "persp";
 	rename -uid "937B2EDB-495B-23AE-38DB-E4891CA1AC59";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 11.617546453488414 8.8872865111428112 13.065265533193768 ;
-	setAttr ".r" -type "double3" 343.19999999419679 41.600000000001607 1.0633066337944335e-15 ;
+	setAttr ".t" -type "double3" 11.924123822298069 9.2847035372381477 19.117786991321005 ;
+	setAttr ".r" -type "double3" 345.59999999418812 32.79999999999928 0 ;
 	setAttr ".rpt" -type "double3" 4.3191380705079204e-18 5.2655079106602255e-17 -5.3139580666453939e-17 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "6A068267-4C39-2EFB-A032-139887CD0243";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999979;
-	setAttr ".coi" 20.627322797557152;
+	setAttr ".coi" 25.571482911571298;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -11897,20 +11897,20 @@ createNode aiSkyDomeLight -n "aiSkyDomeLightShape1" -p "aiSkyDomeLight1";
 	rename -uid "1BFDE287-40AE-C7AC-192C-A6AB31874121";
 	setAttr -k off ".v";
 createNode lightLinker -s -n "lightLinker1";
-	rename -uid "8C99E8A7-4CA6-0EC2-9C36-3A94EAFDF18A";
+	rename -uid "3451FDFE-42BB-1253-C585-1B8CA3323307";
 	setAttr -s 14 ".lnk";
 	setAttr -s 14 ".slnk";
 createNode shapeEditorManager -n "shapeEditorManager";
-	rename -uid "8525F982-4044-4B63-EA3E-3DA56D34F19B";
+	rename -uid "90C31E49-499B-C988-73AE-5BB4A2E3FA07";
 createNode poseInterpolatorManager -n "poseInterpolatorManager";
-	rename -uid "A948E8A0-4922-73AD-5822-63B040B2FC1D";
+	rename -uid "6EC18E06-4743-D629-CD5A-8485C1D79926";
 createNode displayLayerManager -n "layerManager";
-	rename -uid "CA38B861-4078-F24B-F408-2DAC7909B803";
+	rename -uid "8DE5D9A5-480C-B257-0728-4394F57F330C";
 createNode displayLayer -n "defaultLayer";
 	rename -uid "109B455B-47FE-84AC-7441-3CA1D08962A9";
 	setAttr ".ufem" -type "stringArray" 0  ;
 createNode renderLayerManager -n "renderLayerManager";
-	rename -uid "BA1BA04E-41E3-5435-635D-38869BCF1104";
+	rename -uid "96154327-4303-02AC-9E97-09BA80A055B6";
 createNode renderLayer -n "defaultRenderLayer";
 	rename -uid "274982DE-406E-5FC2-C9CE-10BC9D3370B8";
 	setAttr ".g" yes;
@@ -11969,6 +11969,7 @@ createNode aiOptions -s -n "defaultArnoldRenderOptions";
 	rename -uid "2849F180-471C-AFFA-B716-0293033B26CD";
 	addAttr -ci true -sn "ARV_options" -ln "ARV_options" -dt "string";
 	setAttr ".version" -type "string" "5.3.4.1";
+	setAttr ".ARV_options" -type "string" "Test Resolution=100%;Camera=cameraShape1;Color Management.Gamma=1;Color Management.Exposure=0;Background.BG=BG Color;Background.Color=0 0 0;Background.Image=;Background.Scale=1 1;Background.Offset=0 0;Background.Apply Color Management=1;Foreground.Enable FG=0;Foreground.Image=;Foreground.Scale=1 1;Foreground.Offset=0 0;Foreground.Apply Color Management=1;";
 createNode aiAOVFilter -s -n "defaultArnoldFilter";
 	rename -uid "9F20E481-423B-694E-F84B-E195BFBDDBA6";
 	setAttr ".ai_translator" -type "string" "gaussian";
@@ -12149,10 +12150,11 @@ createNode nodeGraphEditorInfo -n "hyperShadePrimaryNodeEditorSavedTabsInfo";
 	setAttr ".tgi[0].ni[15].nvs" 1923;
 createNode aiPhysicalSky -n "aiPhysicalSky1";
 	rename -uid "BC952C2F-4C63-3D4A-91C5-CDA1E5055D85";
-	setAttr ".elevation" 27;
-	setAttr ".azimuth" 263;
+	setAttr ".elevation" 4.1999998092651367;
+	setAttr ".azimuth" 290;
+	setAttr ".sun_size" 5;
 	setAttr ".sun_tint" -type "float3" 1 1 0.23100001 ;
-	setAttr ".intensity" 1.8500000238418579;
+	setAttr ".intensity" 5.3000001907348633;
 select -ne :time1;
 	setAttr ".o" 1;
 	setAttr ".unw" 1;
@@ -12200,8 +12202,6 @@ select -ne :defaultColorMgtGlobals;
 select -ne :hardwareRenderGlobals;
 	setAttr ".ctrs" 256;
 	setAttr ".btrs" 512;
-select -ne :ikSystem;
-	setAttr -s 4 ".sol";
 connectAttr "aiPhysicalSky1.out" "aiSkyDomeLightShape1.sc";
 relationship "link" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
 relationship "link" ":lightLinker1" ":initialParticleSE.message" ":defaultLightSet.message";
@@ -12401,4 +12401,4 @@ connectAttr "defaultRenderLayer.msg" ":defaultRenderingList1.r" -na;
 connectAttr "aiSkyDomeLightShape1.ltd" ":lightList1.l" -na;
 connectAttr "file1.msg" ":defaultTextureList1.tx" -na;
 connectAttr "aiSkyDomeLight1.iog" ":defaultLightSet.dsm" -na;
-// End of LightingAndRendering.ma
+// End of RefineLightingAndRendering.ma
