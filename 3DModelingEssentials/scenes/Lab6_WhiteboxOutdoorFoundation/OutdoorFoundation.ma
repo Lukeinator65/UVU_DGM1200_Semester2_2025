@@ -1,6 +1,6 @@
 //Maya ASCII 2025ff03 scene
 //Name: OutdoorFoundation.ma
-//Last modified: Mon, Feb 24, 2025 10:40:24 AM
+//Last modified: Mon, Feb 24, 2025 10:44:22 AM
 //Codeset: 1252
 requires maya "2025ff03";
 requires "mtoa" "5.4.5";
@@ -10,12 +10,12 @@ fileInfo "product" "Maya 2025";
 fileInfo "version" "2025";
 fileInfo "cutIdentifier" "202409190603-cbdc5a7e54";
 fileInfo "osv" "Windows 10 Home v2009 (Build: 19045)";
-fileInfo "UUID" "073CA07E-4ABE-EB9B-57AD-29B2AA9BF32B";
+fileInfo "UUID" "B89272EF-4DA3-BA77-FA48-B1943B953063";
 createNode transform -s -n "persp";
 	rename -uid "7795DAF6-4F08-397C-2DCB-658507765368";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 15.261315797820071 10.553189890056634 16.136855696271404 ;
-	setAttr ".r" -type "double3" -26.738352729603811 34.200000000001218 0 ;
+	setAttr ".t" -type "double3" 18.860599194408472 5.2338007998526326 15.794766198094212 ;
+	setAttr ".r" -type "double3" -13.538352729613953 41.800000000000374 -1.0666187385028477e-15 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "DD7A9B80-4EA5-4D18-2DF3-58AE115D9011";
 	setAttr -k off ".v" no;
@@ -77,43 +77,116 @@ createNode camera -s -n "sideShape" -p "side";
 	setAttr ".ai_translator" -type "string" "orthographic";
 createNode transform -n "ConcreteShell_WB";
 	rename -uid "67428572-48FE-09D4-04CE-7B8B7A84AC5A";
-	setAttr ".t" -type "double3" 1 1 -0.5 ;
+	setAttr ".rp" -type "double3" 1 1 -0.5 ;
+	setAttr ".sp" -type "double3" 1 1 -0.5 ;
 createNode mesh -n "ConcreteShell_WBShape" -p "ConcreteShell_WB";
 	rename -uid "EA104107-49FD-56C3-F87C-0F96F54E41D1";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
 	setAttr ".vif" yes;
+	setAttr -s 6 ".gtag";
+	setAttr ".gtag[0].gtagnm" -type "string" "back";
+	setAttr ".gtag[0].gtagcmp" -type "componentList" 1 "f[2]";
+	setAttr ".gtag[1].gtagnm" -type "string" "bottom";
+	setAttr ".gtag[1].gtagcmp" -type "componentList" 1 "f[3]";
+	setAttr ".gtag[2].gtagnm" -type "string" "front";
+	setAttr ".gtag[2].gtagcmp" -type "componentList" 1 "f[0]";
+	setAttr ".gtag[3].gtagnm" -type "string" "left";
+	setAttr ".gtag[3].gtagcmp" -type "componentList" 1 "f[5]";
+	setAttr ".gtag[4].gtagnm" -type "string" "right";
+	setAttr ".gtag[4].gtagcmp" -type "componentList" 1 "f[4]";
+	setAttr ".gtag[5].gtagnm" -type "string" "top";
+	setAttr ".gtag[5].gtagcmp" -type "componentList" 1 "f[1]";
 	setAttr ".pv" -type "double2" 0.5 0.375 ;
 	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr -s 14 ".uvst[0].uvsp[0:13]" -type "float2" 0.375 0 0.625 0 0.375
+		 0.25 0.625 0.25 0.375 0.5 0.625 0.5 0.375 0.75 0.625 0.75 0.375 1 0.625 1 0.875 0
+		 0.875 0.25 0.125 0 0.125 0.25;
 	setAttr ".cuvs" -type "string" "map1";
 	setAttr ".dcc" -type "string" "Ambient+Diffuse";
 	setAttr ".covm[0]"  0 1 1;
 	setAttr ".cdvm[0]"  0 1 1;
-	setAttr -s 4 ".pt[2:5]" -type "float3"  0 1.0527596 0 0 1.0527596 
-		0 0 1.0527596 0 0 1.0527596 0;
+	setAttr -s 8 ".pt[0:7]" -type "float3"  1 1 -0.5 1 1 -0.5 1 2.0527596 
+		-0.5 1 2.0527596 -0.5 1 2.0527596 -0.5 1 2.0527596 -0.5 1 1 -0.5 1 1 -0.5;
+	setAttr -s 8 ".vt[0:7]"  -1 -1 4.5 1 -1 4.5 -1 1 4.5 1 1 4.5 -1 1 -4.5
+		 1 1 -4.5 -1 -1 -4.5 1 -1 -4.5;
+	setAttr -s 12 ".ed[0:11]"  0 1 0 2 3 0 4 5 0 6 7 0 0 2 0 1 3 0 2 4 0
+		 3 5 0 4 6 0 5 7 0 6 0 0 7 1 0;
+	setAttr -s 6 -ch 24 ".fc[0:5]" -type "polyFaces" 
+		f 4 0 5 -2 -5
+		mu 0 4 0 1 3 2
+		f 4 1 7 -3 -7
+		mu 0 4 2 3 5 4
+		f 4 2 9 -4 -9
+		mu 0 4 4 5 7 6
+		f 4 3 11 -1 -11
+		mu 0 4 6 7 9 8
+		f 4 -12 -10 -8 -6
+		mu 0 4 1 10 11 3
+		f 4 10 4 6 8
+		mu 0 4 12 0 2 13;
+	setAttr ".cd" -type "dataPolyComponent" Index_Data Edge 0 ;
+	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
+	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
+	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 createNode transform -n "Sand_WB";
 	rename -uid "BE9A8235-430C-2388-9B49-10BE96FCDC16";
-	setAttr ".t" -type "double3" 5 0.5 -0.5 ;
-	setAttr ".rp" -type "double3" 0 -0.5 0 ;
-	setAttr ".sp" -type "double3" 0 -0.5 0 ;
+	setAttr ".rp" -type "double3" 5 0 -0.5 ;
+	setAttr ".sp" -type "double3" 5 0 -0.5 ;
 createNode mesh -n "Sand_WBShape" -p "Sand_WB";
 	rename -uid "4BC6418E-46AB-971A-611E-1F8A12B2B9D5";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
 	setAttr ".vif" yes;
+	setAttr -s 6 ".gtag";
+	setAttr ".gtag[0].gtagnm" -type "string" "back";
+	setAttr ".gtag[0].gtagcmp" -type "componentList" 1 "f[2]";
+	setAttr ".gtag[1].gtagnm" -type "string" "bottom";
+	setAttr ".gtag[1].gtagcmp" -type "componentList" 1 "f[3]";
+	setAttr ".gtag[2].gtagnm" -type "string" "front";
+	setAttr ".gtag[2].gtagcmp" -type "componentList" 1 "f[0]";
+	setAttr ".gtag[3].gtagnm" -type "string" "left";
+	setAttr ".gtag[3].gtagcmp" -type "componentList" 1 "f[5]";
+	setAttr ".gtag[4].gtagnm" -type "string" "right";
+	setAttr ".gtag[4].gtagcmp" -type "componentList" 1 "f[4]";
+	setAttr ".gtag[5].gtagnm" -type "string" "top";
+	setAttr ".gtag[5].gtagcmp" -type "componentList" 1 "f[1]";
 	setAttr ".pv" -type "double2" 0.5 0.375 ;
 	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr -s 14 ".uvst[0].uvsp[0:13]" -type "float2" 0.375 0 0.625 0 0.375
+		 0.25 0.625 0.25 0.375 0.5 0.625 0.5 0.375 0.75 0.625 0.75 0.375 1 0.625 1 0.875 0
+		 0.875 0.25 0.125 0 0.125 0.25;
 	setAttr ".cuvs" -type "string" "map1";
 	setAttr ".dcc" -type "string" "Ambient+Diffuse";
 	setAttr ".covm[0]"  0 1 1;
 	setAttr ".cdvm[0]"  0 1 1;
-	setAttr -s 4 ".pt[2:5]" -type "float3"  0 -0.39545783 0 0 -0.39545783 
-		0 0 -0.39545783 0 0 -0.39545783 0;
+	setAttr -s 8 ".pt[0:7]" -type "float3"  5 0.5 -0.5 5 0.5 -0.5 5 0.10454217 
+		-0.5 5 0.10454217 -0.5 5 0.10454217 -0.5 5 0.10454217 -0.5 5 0.5 -0.5 5 0.5 -0.5;
+	setAttr -s 8 ".vt[0:7]"  -3 -0.5 4.5 3 -0.5 4.5 -3 0.5 4.5 3 0.5 4.5
+		 -3 0.5 -4.5 3 0.5 -4.5 -3 -0.5 -4.5 3 -0.5 -4.5;
+	setAttr -s 12 ".ed[0:11]"  0 1 0 2 3 0 4 5 0 6 7 0 0 2 0 1 3 0 2 4 0
+		 3 5 0 4 6 0 5 7 0 6 0 0 7 1 0;
+	setAttr -s 6 -ch 24 ".fc[0:5]" -type "polyFaces" 
+		f 4 0 5 -2 -5
+		mu 0 4 0 1 3 2
+		f 4 1 7 -3 -7
+		mu 0 4 2 3 5 4
+		f 4 2 9 -4 -9
+		mu 0 4 4 5 7 6
+		f 4 3 11 -1 -11
+		mu 0 4 6 7 9 8
+		f 4 -12 -10 -8 -6
+		mu 0 4 1 10 11 3
+		f 4 10 4 6 8
+		mu 0 4 12 0 2 13;
+	setAttr ".cd" -type "dataPolyComponent" Index_Data Edge 0 ;
+	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
+	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
+	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 createNode transform -n "Water_WB";
 	rename -uid "9FA529FF-4B83-D67D-4946-77B2FAF9CE67";
-	setAttr ".t" -type "double3" 5 1.1045421361923218 -0.5 ;
-	setAttr ".rp" -type "double3" 0 -0.5 0 ;
-	setAttr ".sp" -type "double3" 0 -0.5 0 ;
+	setAttr ".rp" -type "double3" 5 0.60454213619232178 -0.5 ;
+	setAttr ".sp" -type "double3" 5 0.60454213619232178 -0.5 ;
 createNode mesh -n "Water_WBShape" -p "Water_WB";
 	rename -uid "B313C43D-4226-BE97-7E83-16A635D1C287";
 	setAttr -k off ".v";
@@ -141,8 +214,9 @@ createNode mesh -n "Water_WBShape" -p "Water_WB";
 	setAttr ".dcc" -type "string" "Ambient+Diffuse";
 	setAttr ".covm[0]"  0 1 1;
 	setAttr ".cdvm[0]"  0 1 1;
-	setAttr -s 4 ".pt[2:5]" -type "float3"  0 -0.071378924 0 0 -0.071378924 
-		0 0 -0.071378924 0 0 -0.071378924 0;
+	setAttr -s 8 ".pt[0:7]" -type "float3"  5 1.1045421 -0.5 5 1.1045421 
+		-0.5 5 1.0331632 -0.5 5 1.0331632 -0.5 5 1.0331632 -0.5 5 1.0331632 -0.5 5 1.1045421 
+		-0.5 5 1.1045421 -0.5;
 	setAttr -s 8 ".vt[0:7]"  -3 -0.5 4.5 3 -0.5 4.5 -3 0.5 4.5 3 0.5 4.5
 		 -3 0.5 -4.5 3 0.5 -4.5 -3 -0.5 -4.5 3 -0.5 -4.5;
 	setAttr -s 12 ".ed[0:11]"  0 1 0 2 3 0 4 5 0 6 7 0 0 2 0 1 3 0 2 4 0
@@ -166,10 +240,8 @@ createNode mesh -n "Water_WBShape" -p "Water_WB";
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 createNode transform -n "WoodDock_WB";
 	rename -uid "5B8BF926-4806-FD56-49A6-DBAC33B26C74";
-	setAttr ".t" -type "double3" 5 2.6241385936737061 -0.5 ;
-	setAttr ".s" -type "double3" 1 0.26289634128691769 1 ;
-	setAttr ".rp" -type "double3" -3 0.42862105369567871 4.5 ;
-	setAttr ".sp" -type "double3" -3 0.42862105369567871 4.5 ;
+	setAttr ".rp" -type "double3" 2 3.0527596473693848 4 ;
+	setAttr ".sp" -type "double3" 2 3.0527596473693848 4 ;
 createNode mesh -n "WoodDock_WBShape" -p "WoodDock_WB";
 	rename -uid "CEE9B5C0-4944-3612-FF05-ACB5269A21EA";
 	setAttr -k off ".v";
@@ -197,13 +269,9 @@ createNode mesh -n "WoodDock_WBShape" -p "WoodDock_WB";
 	setAttr ".dcc" -type "string" "Ambient+Diffuse";
 	setAttr ".covm[0]"  0 1 1;
 	setAttr ".cdvm[0]"  0 1 1;
-	setAttr -s 6 ".pt";
-	setAttr ".pt[1]" -type "float3" -3.3463225 0 0 ;
-	setAttr ".pt[2]" -type "float3" 0 -0.071378924 0 ;
-	setAttr ".pt[3]" -type "float3" -3.3463225 -0.071378924 0 ;
-	setAttr ".pt[4]" -type "float3" 0 -0.071378924 0 ;
-	setAttr ".pt[5]" -type "float3" -3.3463225 -0.071378924 0 ;
-	setAttr ".pt[7]" -type "float3" -3.3463225 0 0 ;
+	setAttr -s 8 ".pt[0:7]" -type "float3"  5 3.3086286 -0.5 1.6536775 
+		3.3086286 -0.5 5 2.5527596 -0.5 1.6536775 2.5527596 -0.5 5 2.5527596 -0.5 1.6536775 
+		2.5527596 -0.5 5 3.3086286 -0.5 1.6536775 3.3086286 -0.5;
 	setAttr -s 8 ".vt[0:7]"  -3 -0.5 4.5 3 -0.5 4.5 -3 0.5 4.5 3 0.5 4.5
 		 -3 0.5 -4.5 3 0.5 -4.5 -3 -0.5 -4.5 3 -0.5 -4.5;
 	setAttr -s 12 ".ed[0:11]"  0 1 0 2 3 0 4 5 0 6 7 0 0 2 0 1 3 0 2 4 0
@@ -295,17 +363,6 @@ createNode script -n "sceneConfigurationScriptNode";
 	rename -uid "895A20C9-4003-FF72-2556-1FB26F053026";
 	setAttr ".b" -type "string" "playbackOptions -min 1 -max 120 -ast 1 -aet 200 ";
 	setAttr ".st" 6;
-createNode polyCube -n "polyCube1";
-	rename -uid "1342E066-4FF6-F9E3-51D3-71AE747F6036";
-	setAttr ".w" 2;
-	setAttr ".h" 2;
-	setAttr ".d" 9;
-	setAttr ".cuv" 4;
-createNode polyCube -n "polyCube2";
-	rename -uid "B6929163-4337-55DE-600D-85B084175C43";
-	setAttr ".w" 6;
-	setAttr ".d" 9;
-	setAttr ".cuv" 4;
 select -ne :time1;
 	setAttr ".o" 1;
 	setAttr ".unw" 1;
@@ -350,8 +407,8 @@ select -ne :defaultColorMgtGlobals;
 select -ne :hardwareRenderGlobals;
 	setAttr ".ctrs" 256;
 	setAttr ".btrs" 512;
-connectAttr "polyCube1.out" "ConcreteShell_WBShape.i";
-connectAttr "polyCube2.out" "Sand_WBShape.i";
+select -ne :ikSystem;
+	setAttr -s 4 ".sol";
 relationship "link" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
 relationship "link" ":lightLinker1" ":initialParticleSE.message" ":defaultLightSet.message";
 relationship "shadowLink" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
