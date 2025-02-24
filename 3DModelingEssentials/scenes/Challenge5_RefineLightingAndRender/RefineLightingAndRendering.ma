@@ -1,6 +1,6 @@
 //Maya ASCII 2025ff03 scene
 //Name: RefineLightingAndRendering.ma
-//Last modified: Mon, Feb 24, 2025 10:05:50 AM
+//Last modified: Mon, Feb 24, 2025 10:08:05 AM
 //Codeset: 1252
 requires maya "2025ff03";
 requires "stereoCamera" "10.0";
@@ -13,18 +13,18 @@ fileInfo "product" "Maya 2025";
 fileInfo "version" "2025";
 fileInfo "cutIdentifier" "202409190603-cbdc5a7e54";
 fileInfo "osv" "Windows 10 Home v2009 (Build: 19045)";
-fileInfo "UUID" "4650A3C9-4188-C257-CCB5-B4A1D6E842BA";
+fileInfo "UUID" "A8722BEE-47F7-1293-45CD-D58257CA636B";
 createNode transform -s -n "persp";
 	rename -uid "937B2EDB-495B-23AE-38DB-E4891CA1AC59";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 17.135438617387138 7.9797256392227931 15.071631388417966 ;
-	setAttr ".r" -type "double3" 348.59999999414265 47.999999999997655 0 ;
+	setAttr ".t" -type "double3" -1.4922693839840446 3.4990909988801562 10.658797225882678 ;
+	setAttr ".r" -type "double3" 355.79999999412939 -8.8000000000000238 -5.0288139696132778e-17 ;
 	setAttr ".rpt" -type "double3" 4.3191380705079204e-18 5.2655079106602255e-17 -5.3139580666453939e-17 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "6A068267-4C39-2EFB-A032-139887CD0243";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999979;
-	setAttr ".coi" 25.571482911571298;
+	setAttr ".coi" 10.630479654844221;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -11912,6 +11912,14 @@ createNode transform -n "CeilingAreaLight";
 createNode areaLight -n "CeilingAreaLightShape" -p "CeilingAreaLight";
 	rename -uid "C9812B98-435B-D20B-51F4-BAB863442E17";
 	setAttr -k off ".v";
+createNode transform -n "areaLight1";
+	rename -uid "E0EBD003-4EB1-8710-107E-F58CFB3E0236";
+	setAttr ".t" -type "double3" 1.6360456831435908 1.4229412073072996 0.11150592314849606 ;
+	setAttr ".r" -type "double3" 0 90 0 ;
+	setAttr ".s" -type "double3" 0.85 0.65 0.85 ;
+createNode areaLight -n "areaLightShape1" -p "areaLight1";
+	rename -uid "2C0DCCE6-4F49-2408-02AD-0294D1D288AD";
+	setAttr -k off ".v";
 createNode lightLinker -s -n "lightLinker1";
 	rename -uid "3451FDFE-42BB-1253-C585-1B8CA3323307";
 	setAttr -s 14 ".lnk";
@@ -12191,7 +12199,7 @@ select -ne :postProcessList1;
 select -ne :defaultRenderUtilityList1;
 select -ne :defaultRenderingList1;
 select -ne :lightList1;
-	setAttr -s 3 ".l";
+	setAttr -s 4 ".l";
 select -ne :defaultTextureList1;
 select -ne :standardSurface1;
 	setAttr ".bc" -type "float3" 0.40000001 0.40000001 0.40000001 ;
@@ -12207,7 +12215,7 @@ select -ne :defaultRenderGlobals;
 select -ne :defaultResolution;
 	setAttr ".pa" 1;
 select -ne :defaultLightSet;
-	setAttr -s 3 ".dsm";
+	setAttr -s 4 ".dsm";
 select -ne :defaultColorMgtGlobals;
 	setAttr ".cfe" yes;
 	setAttr ".cfp" -type "string" "<MAYA_RESOURCES>/OCIO-configs/Maya2022-default/config.ocio";
@@ -12419,8 +12427,10 @@ connectAttr "defaultRenderLayer.msg" ":defaultRenderingList1.r" -na;
 connectAttr "aiSkyDomeLightShape1.ltd" ":lightList1.l" -na;
 connectAttr "LeftAreaLightShape.ltd" ":lightList1.l" -na;
 connectAttr "CeilingAreaLightShape.ltd" ":lightList1.l" -na;
+connectAttr "areaLightShape1.ltd" ":lightList1.l" -na;
 connectAttr "file1.msg" ":defaultTextureList1.tx" -na;
 connectAttr "aiSkyDomeLight1.iog" ":defaultLightSet.dsm" -na;
 connectAttr "LeftAreaLight.iog" ":defaultLightSet.dsm" -na;
 connectAttr "CeilingAreaLight.iog" ":defaultLightSet.dsm" -na;
+connectAttr "areaLight1.iog" ":defaultLightSet.dsm" -na;
 // End of RefineLightingAndRendering.ma
