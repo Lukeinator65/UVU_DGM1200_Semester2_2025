@@ -1,6 +1,6 @@
 //Maya ASCII 2025ff03 scene
 //Name: LightingAndRendering.ma
-//Last modified: Mon, Feb 24, 2025 09:12:13 AM
+//Last modified: Mon, Feb 24, 2025 09:22:11 AM
 //Codeset: 1252
 requires maya "2025ff03";
 requires "stereoCamera" "10.0";
@@ -12,11 +12,11 @@ fileInfo "product" "Maya 2025";
 fileInfo "version" "2025";
 fileInfo "cutIdentifier" "202409190603-cbdc5a7e54";
 fileInfo "osv" "Windows 10 Home v2009 (Build: 19045)";
-fileInfo "UUID" "D4F06235-49B0-B4CA-431A-F284921C2959";
+fileInfo "UUID" "A112E8C3-438B-D7FA-89AA-25BB38095A97";
 createNode transform -s -n "persp";
 	rename -uid "937B2EDB-495B-23AE-38DB-E4891CA1AC59";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 10.553563190576913 5.684631885136505 12.056498977196103 ;
+	setAttr ".t" -type "double3" 10.419785420179375 5.2595332793613379 12.275268325238155 ;
 	setAttr ".r" -type "double3" 349.79999999422552 41.200000000000394 -5.283910917799746e-16 ;
 	setAttr ".rpt" -type "double3" 4.3191380705079204e-18 5.2655079106602255e-17 -5.3139580666453939e-17 ;
 createNode camera -s -n "perspShape" -p "persp";
@@ -11877,8 +11877,8 @@ createNode mesh -n "pCubeShape1" -p "pCube1";
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 createNode lightLinker -s -n "lightLinker1";
 	rename -uid "8C99E8A7-4CA6-0EC2-9C36-3A94EAFDF18A";
-	setAttr -s 13 ".lnk";
-	setAttr -s 13 ".slnk";
+	setAttr -s 14 ".lnk";
+	setAttr -s 14 ".slnk";
 createNode shapeEditorManager -n "shapeEditorManager";
 	rename -uid "8525F982-4044-4B63-EA3E-3DA56D34F19B";
 createNode poseInterpolatorManager -n "poseInterpolatorManager";
@@ -12061,54 +12061,70 @@ createNode shadingEngine -n "lambert9SG";
 	setAttr ".ro" yes;
 createNode materialInfo -n "materialInfo11";
 	rename -uid "44C94E93-4723-26E1-CE86-EE85FDC79155";
+createNode lambert -n "LightPinkColor";
+	rename -uid "09DAB275-4D1B-BF7A-BE5C-1C937F05DEBA";
+	setAttr ".c" -type "float3" 0.5 0.3495 0.4652696 ;
+createNode shadingEngine -n "lambert10SG";
+	rename -uid "BF5E47FF-406F-4EA6-08F8-67B20F0FE70F";
+	setAttr ".ihi" 0;
+	setAttr -s 3 ".dsm";
+	setAttr ".ro" yes;
+createNode materialInfo -n "materialInfo12";
+	rename -uid "A81FC5DE-45E2-091A-ABC7-7E89C31F1695";
 createNode nodeGraphEditorInfo -n "hyperShadePrimaryNodeEditorSavedTabsInfo";
-	rename -uid "07067A61-4BBE-DF7B-1472-618C981F0741";
+	rename -uid "CDAAF0AC-4686-D665-F724-8D8DC8B59F57";
 	setAttr ".tgi[0].tn" -type "string" "Untitled_1";
-	setAttr ".tgi[0].vl" -type "double2" -2265.1519332415646 -2913.0615877999935 ;
-	setAttr ".tgi[0].vh" -type "double2" 2649.3683275426984 2098.7759058710858 ;
-	setAttr -s 14 ".tgi[0].ni";
-	setAttr ".tgi[0].ni[0].x" -78.571426391601562;
-	setAttr ".tgi[0].ni[0].y" -317.14285278320312;
+	setAttr ".tgi[0].vl" -type "double2" -486.96234962600965 -459.23503788707751 ;
+	setAttr ".tgi[0].vh" -type "double2" 1985.2377017975857 2061.9194700003509 ;
+	setAttr -s 16 ".tgi[0].ni";
+	setAttr ".tgi[0].ni[0].x" -215.71427917480469;
+	setAttr ".tgi[0].ni[0].y" 111.42857360839844;
 	setAttr ".tgi[0].ni[0].nvs" 1923;
-	setAttr ".tgi[0].ni[1].x" -45.714286804199219;
-	setAttr ".tgi[0].ni[1].y" -265.71429443359375;
+	setAttr ".tgi[0].ni[1].x" -1265.7142333984375;
+	setAttr ".tgi[0].ni[1].y" -287.14285278320312;
 	setAttr ".tgi[0].ni[1].nvs" 1923;
-	setAttr ".tgi[0].ni[2].x" 228.57142639160156;
-	setAttr ".tgi[0].ni[2].y" -317.14285278320312;
+	setAttr ".tgi[0].ni[2].x" -385.71429443359375;
+	setAttr ".tgi[0].ni[2].y" -340;
 	setAttr ".tgi[0].ni[2].nvs" 1923;
-	setAttr ".tgi[0].ni[3].x" 91.428573608398438;
-	setAttr ".tgi[0].ni[3].y" 111.42857360839844;
+	setAttr ".tgi[0].ni[3].x" -78.571426391601562;
+	setAttr ".tgi[0].ni[3].y" -317.14285278320312;
 	setAttr ".tgi[0].ni[3].nvs" 1923;
-	setAttr ".tgi[0].ni[4].x" 128.57142639160156;
-	setAttr ".tgi[0].ni[4].y" -1040;
+	setAttr ".tgi[0].ni[4].x" 1777.142822265625;
+	setAttr ".tgi[0].ni[4].y" -297.14285278320312;
 	setAttr ".tgi[0].ni[4].nvs" 1923;
-	setAttr ".tgi[0].ni[5].x" -352.85714721679688;
-	setAttr ".tgi[0].ni[5].y" -265.71429443359375;
+	setAttr ".tgi[0].ni[5].x" 535.71429443359375;
+	setAttr ".tgi[0].ni[5].y" -340;
 	setAttr ".tgi[0].ni[5].nvs" 1923;
-	setAttr ".tgi[0].ni[6].x" -215.71427917480469;
-	setAttr ".tgi[0].ni[6].y" 111.42857360839844;
+	setAttr ".tgi[0].ni[6].x" -958.5714111328125;
+	setAttr ".tgi[0].ni[6].y" -287.14285278320312;
 	setAttr ".tgi[0].ni[6].nvs" 1923;
-	setAttr ".tgi[0].ni[7].x" 535.71429443359375;
-	setAttr ".tgi[0].ni[7].y" -340;
+	setAttr ".tgi[0].ni[7].x" -178.57142639160156;
+	setAttr ".tgi[0].ni[7].y" -1040;
 	setAttr ".tgi[0].ni[7].nvs" 1923;
-	setAttr ".tgi[0].ni[8].x" -385.71429443359375;
-	setAttr ".tgi[0].ni[8].y" -340;
+	setAttr ".tgi[0].ni[8].x" -45.714286804199219;
+	setAttr ".tgi[0].ni[8].y" -265.71429443359375;
 	setAttr ".tgi[0].ni[8].nvs" 1923;
-	setAttr ".tgi[0].ni[9].x" -1265.7142333984375;
-	setAttr ".tgi[0].ni[9].y" -287.14285278320312;
+	setAttr ".tgi[0].ni[9].x" 1470;
+	setAttr ".tgi[0].ni[9].y" -297.14285278320312;
 	setAttr ".tgi[0].ni[9].nvs" 1923;
-	setAttr ".tgi[0].ni[10].x" -178.57142639160156;
-	setAttr ".tgi[0].ni[10].y" -1040;
+	setAttr ".tgi[0].ni[10].x" -352.85714721679688;
+	setAttr ".tgi[0].ni[10].y" -265.71429443359375;
 	setAttr ".tgi[0].ni[10].nvs" 1923;
-	setAttr ".tgi[0].ni[11].x" 1470;
-	setAttr ".tgi[0].ni[11].y" -297.14285278320312;
+	setAttr ".tgi[0].ni[11].x" 228.57142639160156;
+	setAttr ".tgi[0].ni[11].y" -317.14285278320312;
 	setAttr ".tgi[0].ni[11].nvs" 1923;
-	setAttr ".tgi[0].ni[12].x" 1777.142822265625;
-	setAttr ".tgi[0].ni[12].y" -297.14285278320312;
+	setAttr ".tgi[0].ni[12].x" 128.57142639160156;
+	setAttr ".tgi[0].ni[12].y" -1040;
 	setAttr ".tgi[0].ni[12].nvs" 1923;
-	setAttr ".tgi[0].ni[13].x" -958.5714111328125;
-	setAttr ".tgi[0].ni[13].y" -287.14285278320312;
+	setAttr ".tgi[0].ni[13].x" 91.428573608398438;
+	setAttr ".tgi[0].ni[13].y" 111.42857360839844;
 	setAttr ".tgi[0].ni[13].nvs" 1923;
+	setAttr ".tgi[0].ni[14].x" 502.85714721679688;
+	setAttr ".tgi[0].ni[14].y" 1775.7142333984375;
+	setAttr ".tgi[0].ni[14].nvs" 1923;
+	setAttr ".tgi[0].ni[15].x" 195.71427917480469;
+	setAttr ".tgi[0].ni[15].y" 1775.7142333984375;
+	setAttr ".tgi[0].ni[15].nvs" 1923;
 select -ne :time1;
 	setAttr ".o" 1;
 	setAttr ".unw" 1;
@@ -12120,10 +12136,10 @@ select -ne :hardwareRenderingGlobals;
 	setAttr ".fprt" yes;
 	setAttr ".rtfm" 1;
 select -ne :renderPartition;
-	setAttr -s 13 ".st";
+	setAttr -s 14 ".st";
 select -ne :renderGlobalsList1;
 select -ne :defaultShaderList1;
-	setAttr -s 14 ".s";
+	setAttr -s 15 ".s";
 select -ne :postProcessList1;
 	setAttr -s 2 ".p";
 select -ne :defaultRenderUtilityList1;
@@ -12133,7 +12149,6 @@ select -ne :standardSurface1;
 	setAttr ".bc" -type "float3" 0.40000001 0.40000001 0.40000001 ;
 	setAttr ".sr" 0.5;
 select -ne :initialShadingGroup;
-	setAttr -s 3 ".dsm";
 	setAttr ".ro" yes;
 select -ne :initialParticleSE;
 	setAttr ".ro" yes;
@@ -12170,6 +12185,7 @@ relationship "link" ":lightLinker1" "lambert6SG.message" ":defaultLightSet.messa
 relationship "link" ":lightLinker1" "lambert7SG.message" ":defaultLightSet.message";
 relationship "link" ":lightLinker1" "lambert8SG.message" ":defaultLightSet.message";
 relationship "link" ":lightLinker1" "lambert9SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "lambert10SG.message" ":defaultLightSet.message";
 relationship "shadowLink" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
 relationship "shadowLink" ":lightLinker1" ":initialParticleSE.message" ":defaultLightSet.message";
 relationship "shadowLink" ":lightLinker1" "lambert2SG.message" ":defaultLightSet.message";
@@ -12183,6 +12199,7 @@ relationship "shadowLink" ":lightLinker1" "lambert6SG.message" ":defaultLightSet
 relationship "shadowLink" ":lightLinker1" "lambert7SG.message" ":defaultLightSet.message";
 relationship "shadowLink" ":lightLinker1" "lambert8SG.message" ":defaultLightSet.message";
 relationship "shadowLink" ":lightLinker1" "lambert9SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "lambert10SG.message" ":defaultLightSet.message";
 connectAttr "layerManager.dli[0]" "defaultLayer.id";
 connectAttr "renderLayerManager.rlmi[0]" "defaultRenderLayer.rlid";
 connectAttr ":defaultArnoldDisplayDriver.msg" ":defaultArnoldRenderOptions.drivers"
@@ -12288,33 +12305,43 @@ connectAttr "pCylinderShape3.iog" "lambert9SG.dsm" -na;
 connectAttr "pCylinderShape4.iog" "lambert9SG.dsm" -na;
 connectAttr "lambert9SG.msg" "materialInfo11.sg";
 connectAttr "BrownColor.msg" "materialInfo11.m";
-connectAttr "file1.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[0].dn"
+connectAttr "LightPinkColor.oc" "lambert10SG.ss";
+connectAttr "pCubeShape1.iog" "lambert10SG.dsm" -na;
+connectAttr "pCubeShape2.iog" "lambert10SG.dsm" -na;
+connectAttr "pCubeShape3.iog" "lambert10SG.dsm" -na;
+connectAttr "lambert10SG.msg" "materialInfo12.sg";
+connectAttr "LightPinkColor.msg" "materialInfo12.m";
+connectAttr "BlueColor.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[0].dn"
 		;
-connectAttr "lambert5SG.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[1].dn"
+connectAttr "LightPurpleColor.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[1].dn"
 		;
-connectAttr "boatPicture.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[2].dn"
+connectAttr "place2dTexture1.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[2].dn"
 		;
-connectAttr "lambert6SG.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[3].dn"
+connectAttr "file1.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[3].dn"
 		;
-connectAttr "lambert7SG.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[4].dn"
+connectAttr "lambert9SG.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[4].dn"
 		;
-connectAttr "PurpleColor.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[5].dn"
+connectAttr "blinn2SG.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[5].dn"
 		;
-connectAttr "BlueColor.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[6].dn"
+connectAttr "lambert8SG.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[6].dn"
 		;
-connectAttr "blinn2SG.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[7].dn"
+connectAttr "LightBlueColor.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[7].dn"
 		;
-connectAttr "place2dTexture1.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[8].dn"
+connectAttr "lambert5SG.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[8].dn"
 		;
-connectAttr "LightPurpleColor.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[9].dn"
+connectAttr "BrownColor.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[9].dn"
 		;
-connectAttr "LightBlueColor.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[10].dn"
+connectAttr "PurpleColor.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[10].dn"
 		;
-connectAttr "BrownColor.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[11].dn"
+connectAttr "boatPicture.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[11].dn"
 		;
-connectAttr "lambert9SG.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[12].dn"
+connectAttr "lambert7SG.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[12].dn"
 		;
-connectAttr "lambert8SG.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[13].dn"
+connectAttr "lambert6SG.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[13].dn"
+		;
+connectAttr "lambert10SG.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[14].dn"
+		;
+connectAttr "LightPinkColor.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[15].dn"
 		;
 connectAttr "lambert2SG.pa" ":renderPartition.st" -na;
 connectAttr "blinn1SG.pa" ":renderPartition.st" -na;
@@ -12327,6 +12354,7 @@ connectAttr "lambert6SG.pa" ":renderPartition.st" -na;
 connectAttr "lambert7SG.pa" ":renderPartition.st" -na;
 connectAttr "lambert8SG.pa" ":renderPartition.st" -na;
 connectAttr "lambert9SG.pa" ":renderPartition.st" -na;
+connectAttr "lambert10SG.pa" ":renderPartition.st" -na;
 connectAttr "PinkColor.msg" ":defaultShaderList1.s" -na;
 connectAttr "TealColor.msg" ":defaultShaderList1.s" -na;
 connectAttr "YellowColor.msg" ":defaultShaderList1.s" -na;
@@ -12336,10 +12364,8 @@ connectAttr "BlueColor.msg" ":defaultShaderList1.s" -na;
 connectAttr "LightBlueColor.msg" ":defaultShaderList1.s" -na;
 connectAttr "LightPurpleColor.msg" ":defaultShaderList1.s" -na;
 connectAttr "BrownColor.msg" ":defaultShaderList1.s" -na;
+connectAttr "LightPinkColor.msg" ":defaultShaderList1.s" -na;
 connectAttr "place2dTexture1.msg" ":defaultRenderUtilityList1.u" -na;
 connectAttr "defaultRenderLayer.msg" ":defaultRenderingList1.r" -na;
 connectAttr "file1.msg" ":defaultTextureList1.tx" -na;
-connectAttr "pCubeShape1.iog" ":initialShadingGroup.dsm" -na;
-connectAttr "pCubeShape2.iog" ":initialShadingGroup.dsm" -na;
-connectAttr "pCubeShape3.iog" ":initialShadingGroup.dsm" -na;
 // End of LightingAndRendering.ma
