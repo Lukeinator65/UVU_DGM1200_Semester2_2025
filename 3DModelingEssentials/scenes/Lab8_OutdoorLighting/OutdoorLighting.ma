@@ -1,6 +1,6 @@
 //Maya ASCII 2025ff03 scene
 //Name: OutdoorLighting.ma
-//Last modified: Tue, Mar 04, 2025 04:55:30 AM
+//Last modified: Tue, Mar 04, 2025 04:56:15 AM
 //Codeset: 1252
 requires maya "2025ff03";
 requires "stereoCamera" "10.0";
@@ -14,7 +14,7 @@ fileInfo "product" "Maya 2025";
 fileInfo "version" "2025";
 fileInfo "cutIdentifier" "202409190603-cbdc5a7e54";
 fileInfo "osv" "Windows 10 Home v2009 (Build: 19045)";
-fileInfo "UUID" "ACBD7CA4-4DCE-A0F4-5147-CF9DEE8A5954";
+fileInfo "UUID" "7712F2AE-45CE-EAE4-6A36-0DA2488831E5";
 createNode transform -s -n "persp";
 	rename -uid "7795DAF6-4F08-397C-2DCB-658507765368";
 	setAttr ".v" no;
@@ -50452,7 +50452,7 @@ createNode aiPhysicalSky -n "aiPhysicalSky1";
 	setAttr ".turbidity" 1.8571428060531616;
 	setAttr ".elevation" 40.178569793701172;
 	setAttr ".azimuth" 92.142860412597656;
-	setAttr ".sky_tint" -type "float3" 0.82099998 0.82099998 1 ;
+	setAttr ".sky_tint" -type "float3" 0.667 0.667 1 ;
 	setAttr ".intensity" 2.5160713195800781;
 select -ne :time1;
 	setAttr ".o" 49;
