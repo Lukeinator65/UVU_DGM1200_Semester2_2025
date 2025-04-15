@@ -1,6 +1,6 @@
 //Maya ASCII 2025ff03 scene
 //Name: Lab11_WhiteBoxingForFinal.ma
-//Last modified: Tue, Apr 15, 2025 03:10:46 AM
+//Last modified: Tue, Apr 15, 2025 03:11:38 AM
 //Codeset: 1252
 requires maya "2025ff03";
 requires -nodeType "aiOptions" -nodeType "aiAOVDriver" -nodeType "aiAOVFilter" -nodeType "aiImagerDenoiserOidn"
@@ -11,7 +11,7 @@ fileInfo "product" "Maya 2025";
 fileInfo "version" "2025";
 fileInfo "cutIdentifier" "202409190603-cbdc5a7e54";
 fileInfo "osv" "Windows 10 Home v2009 (Build: 19045)";
-fileInfo "UUID" "B081B032-4B28-5E1A-E6E8-218B9AB58B6E";
+fileInfo "UUID" "3234622C-4DC4-8655-75E1-DF9B2DABD033";
 createNode transform -s -n "persp";
 	rename -uid "7399CA46-41F7-4194-0CCC-D7B51098193F";
 	setAttr ".v" no;
@@ -7803,15 +7803,15 @@ createNode mesh -n "pCubeShape9" -p "pCube9";
 	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
-createNode transform -n "FloorBoards1";
+createNode transform -n "LowerFloorBoards";
 	rename -uid "C553A284-4E4E-0CD3-2E07-5B8471E9E1DE";
 	setAttr ".rp" -type "double3" 0.059451597376274146 -0.60903610276951281 0 ;
 	setAttr ".sp" -type "double3" 0.059451597376274146 -0.60903610276951281 0 ;
-createNode transform -n "pCube4" -p "FloorBoards1";
+createNode transform -n "pCube4" -p "LowerFloorBoards";
 	rename -uid "B83B8AC6-421F-F6EF-8A14-43831BE98872";
 	setAttr ".rp" -type "double3" -3.9291877573295366 0.17196951818690809 1.7727443111238435 ;
 	setAttr ".sp" -type "double3" -3.9291877573295366 0.17196951818690809 1.7727443111238435 ;
-createNode mesh -n "pCubeShape4" -p "|FloorBoards1|pCube4";
+createNode mesh -n "pCubeShape4" -p "|LowerFloorBoards|pCube4";
 	rename -uid "2D23AC8D-431A-4FAF-AE9F-EB925F0B98FA";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -8798,11 +8798,11 @@ createNode mesh -n "pCubeShape4" -p "|FloorBoards1|pCube4";
 	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
-createNode transform -n "pCube5" -p "FloorBoards1";
+createNode transform -n "pCube5" -p "LowerFloorBoards";
 	rename -uid "F25867AB-4228-8F7A-667E-B585D1A79B1A";
 	setAttr ".rp" -type "double3" -3.9291877573295366 0.17196951818690809 0.76220994214755189 ;
 	setAttr ".sp" -type "double3" -3.9291877573295366 0.17196951818690809 0.76220994214755189 ;
-createNode mesh -n "pCubeShape5" -p "|FloorBoards1|pCube5";
+createNode mesh -n "pCubeShape5" -p "|LowerFloorBoards|pCube5";
 	rename -uid "8711E55B-4F74-7929-1B3B-8A9427CB0C75";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -9788,11 +9788,11 @@ createNode mesh -n "pCubeShape5" -p "|FloorBoards1|pCube5";
 	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
-createNode transform -n "pCube6" -p "FloorBoards1";
+createNode transform -n "pCube6" -p "LowerFloorBoards";
 	rename -uid "3AE94A46-42E6-257F-CC7E-50B065179670";
 	setAttr ".rp" -type "double3" -3.9291877573295366 0.17196951818690809 -0.2384870055844166 ;
 	setAttr ".sp" -type "double3" -3.9291877573295366 0.17196951818690809 -0.2384870055844166 ;
-createNode mesh -n "pCubeShape6" -p "|FloorBoards1|pCube6";
+createNode mesh -n "pCubeShape6" -p "|LowerFloorBoards|pCube6";
 	rename -uid "7E55C0E2-4D72-A5F8-6F80-188AFF5FD4E5";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -10778,11 +10778,11 @@ createNode mesh -n "pCubeShape6" -p "|FloorBoards1|pCube6";
 	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
-createNode transform -n "pCube8" -p "FloorBoards1";
+createNode transform -n "pCube8" -p "LowerFloorBoards";
 	rename -uid "30DFC40C-45D4-D972-C2C5-4D91ABB4CD49";
 	setAttr ".rp" -type "double3" -3.9291877573295366 0.17196951818690809 -2.2487305249174065 ;
 	setAttr ".sp" -type "double3" -3.9291877573295366 0.17196951818690809 -2.2487305249174065 ;
-createNode mesh -n "pCubeShape8" -p "|FloorBoards1|pCube8";
+createNode mesh -n "pCubeShape8" -p "|LowerFloorBoards|pCube8";
 	rename -uid "E2B4FA31-4F87-B9D5-79AB-4BA550303F3C";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -11768,15 +11768,15 @@ createNode mesh -n "pCubeShape8" -p "|FloorBoards1|pCube8";
 	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
-createNode transform -n "FloorBoards2";
+createNode transform -n "LowerFloorBoards2";
 	rename -uid "DB6BABE0-4865-FD0F-EBA8-87810F9952C6";
 	setAttr ".rp" -type "double3" 0 -0.54275743863123593 -0.27231712845969747 ;
 	setAttr ".sp" -type "double3" 0 -0.54275743863123593 -0.27231712845969747 ;
-createNode transform -n "pCube3" -p "FloorBoards2";
+createNode transform -n "pCube3" -p "LowerFloorBoards2";
 	rename -uid "020EDABD-4151-5EA3-B7E0-1FBD8678E918";
 	setAttr ".rp" -type "double3" -3.4071461131254797 0.23824818232518497 -3.8829331055737177 ;
 	setAttr ".sp" -type "double3" -3.4071461131254797 0.23824818232518497 -3.8829331055737177 ;
-createNode mesh -n "pCubeShape3" -p "|FloorBoards2|pCube3";
+createNode mesh -n "pCubeShape3" -p "|LowerFloorBoards2|pCube3";
 	rename -uid "6983588A-4FEC-6BA4-A133-248CF1568B81";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -12756,11 +12756,11 @@ createNode mesh -n "pCubeShape3" -p "|FloorBoards2|pCube3";
 	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
-createNode transform -n "pCube5" -p "FloorBoards2";
+createNode transform -n "pCube5" -p "LowerFloorBoards2";
 	rename -uid "7FE9E24C-4DBA-B039-71A8-B88D9737D8FA";
 	setAttr ".rp" -type "double3" -1.6409624350509824 0.23824818232518497 -3.8829331055737177 ;
 	setAttr ".sp" -type "double3" -1.6409624350509824 0.23824818232518497 -3.8829331055737177 ;
-createNode mesh -n "pCubeShape5" -p "|FloorBoards2|pCube5";
+createNode mesh -n "pCubeShape5" -p "|LowerFloorBoards2|pCube5";
 	rename -uid "AE19672D-49F0-A321-8AE0-E386C5FF007B";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -13740,11 +13740,11 @@ createNode mesh -n "pCubeShape5" -p "|FloorBoards2|pCube5";
 	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
-createNode transform -n "pCube7" -p "FloorBoards2";
+createNode transform -n "pCube7" -p "LowerFloorBoards2";
 	rename -uid "F0C44E5C-4AF1-2E9E-50D9-17911DFAE5AC";
 	setAttr ".rp" -type "double3" 0.25802416668206529 0.23824818232518497 -3.8700171672958206 ;
 	setAttr ".sp" -type "double3" 0.25802416668206529 0.23824818232518497 -3.8700171672958206 ;
-createNode mesh -n "pCubeShape7" -p "|FloorBoards2|pCube7";
+createNode mesh -n "pCubeShape7" -p "|LowerFloorBoards2|pCube7";
 	rename -uid "4030497B-4C08-7490-188E-219B723E074D";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -14878,18 +14878,18 @@ connectAttr "|FloorBoards|pCube7|pCubeShape7.iog" ":initialShadingGroup.dsm" -na
 connectAttr "|FloorBoards|pCube8|pCubeShape8.iog" ":initialShadingGroup.dsm" -na
 		;
 connectAttr "pCubeShape9.iog" ":initialShadingGroup.dsm" -na;
-connectAttr "|FloorBoards1|pCube4|pCubeShape4.iog" ":initialShadingGroup.dsm" -na
-		;
-connectAttr "|FloorBoards1|pCube5|pCubeShape5.iog" ":initialShadingGroup.dsm" -na
-		;
-connectAttr "|FloorBoards1|pCube6|pCubeShape6.iog" ":initialShadingGroup.dsm" -na
-		;
-connectAttr "|FloorBoards1|pCube8|pCubeShape8.iog" ":initialShadingGroup.dsm" -na
-		;
-connectAttr "|FloorBoards2|pCube3|pCubeShape3.iog" ":initialShadingGroup.dsm" -na
-		;
-connectAttr "|FloorBoards2|pCube5|pCubeShape5.iog" ":initialShadingGroup.dsm" -na
-		;
-connectAttr "|FloorBoards2|pCube7|pCubeShape7.iog" ":initialShadingGroup.dsm" -na
-		;
+connectAttr "|LowerFloorBoards|pCube4|pCubeShape4.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|LowerFloorBoards|pCube5|pCubeShape5.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|LowerFloorBoards|pCube6|pCubeShape6.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|LowerFloorBoards|pCube8|pCubeShape8.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|LowerFloorBoards2|pCube3|pCubeShape3.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|LowerFloorBoards2|pCube5|pCubeShape5.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|LowerFloorBoards2|pCube7|pCubeShape7.iog" ":initialShadingGroup.dsm"
+		 -na;
 // End of Lab11_WhiteBoxingForFinal.ma
