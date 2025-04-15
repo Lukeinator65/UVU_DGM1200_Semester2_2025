@@ -1,6 +1,6 @@
 //Maya ASCII 2025ff03 scene
 //Name: Lab11_WhiteBoxingForFinal.ma
-//Last modified: Tue, Apr 15, 2025 03:53:54 AM
+//Last modified: Tue, Apr 15, 2025 03:57:30 AM
 //Codeset: 1252
 requires maya "2025ff03";
 requires -nodeType "aiOptions" -nodeType "aiAOVDriver" -nodeType "aiAOVFilter" -nodeType "aiImagerDenoiserOidn"
@@ -11,18 +11,18 @@ fileInfo "product" "Maya 2025";
 fileInfo "version" "2025";
 fileInfo "cutIdentifier" "202409190603-cbdc5a7e54";
 fileInfo "osv" "Windows 10 Home v2009 (Build: 19045)";
-fileInfo "UUID" "4D1AB29D-4D29-94EA-8ED7-259C100F9E66";
+fileInfo "UUID" "63639C09-431A-D7E4-1F2F-038D02AD1E31";
 createNode transform -s -n "persp";
 	rename -uid "7399CA46-41F7-4194-0CCC-D7B51098193F";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 11.878366187571205 13.077069938514295 15.471266028704388 ;
-	setAttr ".r" -type "double3" -27.938352737563296 38.599999999927128 0 ;
+	setAttr ".t" -type "double3" 13.587714654849126 11.318030244487895 17.259027400226287 ;
+	setAttr ".r" -type "double3" -18.338352737598626 36.599999999988036 1.9808703595458466e-15 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "88E8300F-4B06-FEA4-2661-879554C84EED";
 	setAttr -k off ".v" no;
 	setAttr ".pze" yes;
 	setAttr ".fl" 34.999999999999993;
-	setAttr ".coi" 26.464310195610288;
+	setAttr ".coi" 28.226335096391615;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -14748,7 +14748,7 @@ createNode mesh -n "WallsShape" -p "Walls";
 	setAttr ".gtag[4].gtagcmp" -type "componentList" 7 "f[32:47]" "f[52]" "f[58:59]" "f[64:67]" "f[72:75]" "f[84:91]" "f[140:199]";
 	setAttr ".gtag[5].gtagnm" -type "string" "top";
 	setAttr ".gtag[5].gtagcmp" -type "componentList" 3 "f[2:3]" "f[49]" "f[62:63]";
-	setAttr ".pv" -type "double2" 0.75 0.12499380350345746 ;
+	setAttr ".pv" -type "double2" 0.75 0.12499580503208563 ;
 	setAttr ".uvst[0].uvsn" -type "string" "map1";
 	setAttr -s 244 ".uvst[0].uvsp[0:243]" -type "float2" 0.375 0.50157547
 		 0.39999759 0.47501153 0.62499982 0.47501153 0.62499976 0.74842453 0.375 0.24842454
@@ -15343,13 +15343,13 @@ createNode mesh -n "WallsShape" -p "Walls";
 	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
-createNode transform -n "pCube10";
+createNode transform -n "TopOfWalls";
 	rename -uid "9A487F04-4ED7-77B3-C80B-6482EB568342";
 	setAttr ".t" -type "double3" -3.7937097512909257 6.2029438018798828 -4.0446070504129317 ;
 	setAttr ".s" -type "double3" 0.95490761713572081 0.95490761713572081 0.95490761713572081 ;
 	setAttr ".rp" -type "double3" 0 -0.5 0 ;
 	setAttr ".sp" -type "double3" 0 -0.5 0 ;
-createNode mesh -n "pCubeShape10" -p "pCube10";
+createNode mesh -n "TopOfWallsShape" -p "TopOfWalls";
 	rename -uid "72804880-4053-AE30-2C7E-D990CA41A605";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -15517,7 +15517,7 @@ select -ne :hardwareRenderGlobals;
 	setAttr ".btrs" 512;
 select -ne :ikSystem;
 	setAttr -s 4 ".sol";
-connectAttr "polyBevel1.out" "pCubeShape10.i";
+connectAttr "polyBevel1.out" "TopOfWallsShape.i";
 relationship "link" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
 relationship "link" ":lightLinker1" ":initialParticleSE.message" ":defaultLightSet.message";
 relationship "shadowLink" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
@@ -15531,9 +15531,9 @@ connectAttr ":defaultArnoldDisplayDriver.msg" ":defaultArnoldRenderOptions.drive
 connectAttr ":defaultArnoldFilter.msg" ":defaultArnoldRenderOptions.filt";
 connectAttr ":defaultArnoldDriver.msg" ":defaultArnoldRenderOptions.drvr";
 connectAttr "polyCube1.out" "polyExtrudeFace1.ip";
-connectAttr "pCubeShape10.wm" "polyExtrudeFace1.mp";
+connectAttr "TopOfWallsShape.wm" "polyExtrudeFace1.mp";
 connectAttr "polyExtrudeFace1.out" "polyBevel1.ip";
-connectAttr "pCubeShape10.wm" "polyBevel1.mp";
+connectAttr "TopOfWallsShape.wm" "polyBevel1.mp";
 connectAttr "defaultRenderLayer.msg" ":defaultRenderingList1.r" -na;
 connectAttr "FloorBaseShape.iog" ":initialShadingGroup.dsm" -na;
 connectAttr "pCubeShape2.iog" ":initialShadingGroup.dsm" -na;
@@ -15565,5 +15565,5 @@ connectAttr "|LowerFloorBoards2|pCube5|pCubeShape5.iog" ":initialShadingGroup.ds
 connectAttr "|LowerFloorBoards2|pCube7|pCubeShape7.iog" ":initialShadingGroup.dsm"
 		 -na;
 connectAttr "WallsShape.iog" ":initialShadingGroup.dsm" -na;
-connectAttr "pCubeShape10.iog" ":initialShadingGroup.dsm" -na;
+connectAttr "TopOfWallsShape.iog" ":initialShadingGroup.dsm" -na;
 // End of Lab11_WhiteBoxingForFinal.ma
