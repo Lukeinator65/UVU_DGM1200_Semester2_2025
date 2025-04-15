@@ -1,6 +1,6 @@
 //Maya ASCII 2025ff03 scene
 //Name: Lab11_WhiteBoxingForFinal.ma
-//Last modified: Tue, Apr 15, 2025 03:31:30 AM
+//Last modified: Tue, Apr 15, 2025 03:33:39 AM
 //Codeset: 1252
 requires maya "2025ff03";
 requires -nodeType "aiOptions" -nodeType "aiAOVDriver" -nodeType "aiAOVFilter" -nodeType "aiImagerDenoiserOidn"
@@ -11,18 +11,18 @@ fileInfo "product" "Maya 2025";
 fileInfo "version" "2025";
 fileInfo "cutIdentifier" "202409190603-cbdc5a7e54";
 fileInfo "osv" "Windows 10 Home v2009 (Build: 19045)";
-fileInfo "UUID" "43590E9B-41FA-C5A7-1EF5-CE9BE8750A49";
+fileInfo "UUID" "28D068A8-4C49-BA17-7F3E-1B96E844378F";
 createNode transform -s -n "persp";
 	rename -uid "7399CA46-41F7-4194-0CCC-D7B51098193F";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 10.96901953601572 12.560126929813469 14.279947564164521 ;
-	setAttr ".r" -type "double3" -29.738352737358309 1116.6000000000638 1.9808703595477939e-15 ;
+	setAttr ".t" -type "double3" 11.292072210602946 8.0884455289729722 13.156179852373302 ;
+	setAttr ".r" -type "double3" -20.738352737356767 1120.2000000000423 0 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "88E8300F-4B06-FEA4-2661-879554C84EED";
 	setAttr -k off ".v" no;
 	setAttr ".pze" yes;
 	setAttr ".fl" 34.999999999999993;
-	setAttr ".coi" 24.459399683938742;
+	setAttr ".coi" 22.445049845393008;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -77,11 +77,11 @@ createNode camera -s -n "sideShape" -p "side";
 	setAttr ".hc" -type "string" "viewSet -s %camera";
 	setAttr ".o" yes;
 	setAttr ".ai_translator" -type "string" "orthographic";
-createNode transform -n "pCube1";
+createNode transform -n "FloorBase";
 	rename -uid "67CD62DA-4E4C-EA47-378B-F785F5AE1102";
 	setAttr ".rp" -type "double3" 0 0.40600560052417034 0 ;
 	setAttr ".sp" -type "double3" 0 0.40600560052417034 0 ;
-createNode mesh -n "pCubeShape1" -p "pCube1";
+createNode mesh -n "FloorBaseShape" -p "FloorBase";
 	rename -uid "986E08A8-403F-A4CF-4818-54AEDC2B6056";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -14929,7 +14929,7 @@ connectAttr "polyTweak1.out" "polyBevel1.ip";
 connectAttr "WallsShape.wm" "polyBevel1.mp";
 connectAttr "polyExtrudeFace1.out" "polyTweak1.ip";
 connectAttr "defaultRenderLayer.msg" ":defaultRenderingList1.r" -na;
-connectAttr "pCubeShape1.iog" ":initialShadingGroup.dsm" -na;
+connectAttr "FloorBaseShape.iog" ":initialShadingGroup.dsm" -na;
 connectAttr "pCubeShape2.iog" ":initialShadingGroup.dsm" -na;
 connectAttr "|FloorBoards|pCube3|pCubeShape3.iog" ":initialShadingGroup.dsm" -na
 		;
