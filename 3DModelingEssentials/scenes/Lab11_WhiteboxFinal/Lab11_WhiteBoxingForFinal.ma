@@ -1,6 +1,6 @@
 //Maya ASCII 2025ff03 scene
 //Name: Lab11_WhiteBoxingForFinal.ma
-//Last modified: Tue, Apr 15, 2025 12:03:34 AM
+//Last modified: Tue, Apr 15, 2025 12:07:47 AM
 //Codeset: 1252
 requires maya "2025ff03";
 requires -nodeType "aiOptions" -nodeType "aiAOVDriver" -nodeType "aiAOVFilter" -nodeType "aiImagerDenoiserOidn"
@@ -11,18 +11,18 @@ fileInfo "product" "Maya 2025";
 fileInfo "version" "2025";
 fileInfo "cutIdentifier" "202409190603-cbdc5a7e54";
 fileInfo "osv" "Windows 10 Home v2009 (Build: 19045)";
-fileInfo "UUID" "44DF3174-4C1C-E0C1-9FD1-B392B5422EE2";
+fileInfo "UUID" "50FF5680-4185-C98B-5C96-318A5CAFFC76";
 createNode transform -s -n "persp";
 	rename -uid "7399CA46-41F7-4194-0CCC-D7B51098193F";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 10.853588918358914 8.0523090989956021 13.635498542246385 ;
-	setAttr ".r" -type "double3" -36.938352729171271 414.19999999966672 -2.7186194979896433e-15 ;
+	setAttr ".t" -type "double3" 10.603335667055639 11.919777466010361 11.82951028992308 ;
+	setAttr ".r" -type "double3" -39.338352729121702 413.39999999951954 0 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "88E8300F-4B06-FEA4-2661-879554C84EED";
 	setAttr -k off ".v" no;
 	setAttr ".pze" yes;
 	setAttr ".fl" 34.999999999999993;
-	setAttr ".coi" 16.210940188677618;
+	setAttr ".coi" 17.920672077085754;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -92,7 +92,9 @@ createNode mesh -n "pCubeShape1" -p "pCube1";
 	setAttr ".cdvm[0]"  0 1 1;
 createNode transform -n "pCube2";
 	rename -uid "6AC9B8D3-4676-0C54-835C-6FA15CB2C986";
-	setAttr ".t" -type "double3" -1.0380247195549774 0.10961461964843236 7.2816759870286685 ;
+	setAttr ".t" -type "double3" -0.0083230098076629844 0.88100564745984444 3.5083233640428286 ;
+	setAttr ".rp" -type "double3" -3.9803163448981476 -0.10000002650342354 0.48031622908156102 ;
+	setAttr ".sp" -type "double3" -3.9803163448981476 -0.10000002650342354 0.48031622908156102 ;
 createNode mesh -n "pCubeShape2" -p "pCube2";
 	rename -uid "89B3F7EB-4C3D-EB5D-44D5-CF89A51B0F74";
 	setAttr -k off ".v";
