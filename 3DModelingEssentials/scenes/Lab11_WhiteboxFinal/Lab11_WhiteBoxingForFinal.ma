@@ -1,6 +1,6 @@
 //Maya ASCII 2025ff03 scene
 //Name: Lab11_WhiteBoxingForFinal.ma
-//Last modified: Tue, Apr 15, 2025 04:19:42 AM
+//Last modified: Tue, Apr 15, 2025 04:21:25 AM
 //Codeset: 1252
 requires maya "2025ff03";
 requires -nodeType "aiOptions" -nodeType "aiAOVDriver" -nodeType "aiAOVFilter" -nodeType "aiImagerDenoiserOidn"
@@ -11,12 +11,12 @@ fileInfo "product" "Maya 2025";
 fileInfo "version" "2025";
 fileInfo "cutIdentifier" "202409190603-cbdc5a7e54";
 fileInfo "osv" "Windows 10 Home v2009 (Build: 19045)";
-fileInfo "UUID" "74B22638-4A97-ABB2-0928-69982E49A585";
+fileInfo "UUID" "B01AE73B-4097-FF6E-55ED-A0AC862BBCCA";
 createNode transform -s -n "persp";
 	rename -uid "7399CA46-41F7-4194-0CCC-D7B51098193F";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 10.090752777292488 10.439949463544677 16.124464388750635 ;
-	setAttr ".r" -type "double3" -21.338352737619598 34.60000000000143 -1.9319731231936749e-15 ;
+	setAttr ".t" -type "double3" 10.548472696926018 13.630720874179218 13.890145001804012 ;
+	setAttr ".r" -type "double3" -31.538352737621533 38.600000000002751 0 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "88E8300F-4B06-FEA4-2661-879554C84EED";
 	setAttr -k off ".v" no;
@@ -15378,8 +15378,8 @@ createNode mesh -n "pCubeShape10" -p "pCube10";
 	setAttr ".cdvm[0]"  0 1 1;
 createNode transform -n "pCube11";
 	rename -uid "112F4887-42B3-C253-43FF-348B9C69E6A6";
-	setAttr ".t" -type "double3" -2.4683801572916018 2.880182677759846 0.075506305814079466 ;
-	setAttr ".s" -type "double3" 0.90634613008165466 1 1.4989256328721623 ;
+	setAttr ".t" -type "double3" -2.2029474957417117 2.880182677759846 0.075506305814079466 ;
+	setAttr ".s" -type "double3" 1.0995957338794582 1 1.4989256328721623 ;
 createNode mesh -n "pCubeShape11" -p "pCube11";
 	rename -uid "EA7FFC8A-43A3-4FA3-C2E1-C394FC93D3BD";
 	setAttr -k off ".v";
@@ -15511,7 +15511,7 @@ createNode polyCube -n "polyCube2";
 createNode polyCube -n "polyCube3";
 	rename -uid "3D85B4C9-4889-68D7-4B86-6EABFC600E91";
 	setAttr ".w" 2.6420773254781338;
-	setAttr ".h" 0.40401912297601333;
+	setAttr ".h" 0.45;
 	setAttr ".d" 4.7924082744479293;
 	setAttr ".cuv" 4;
 createNode polyBevel3 -n "polyBevel2";
