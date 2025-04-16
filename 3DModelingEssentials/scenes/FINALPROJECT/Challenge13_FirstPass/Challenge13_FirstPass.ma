@@ -1,6 +1,6 @@
 //Maya ASCII 2025ff03 scene
 //Name: Challenge13_FirstPass.ma
-//Last modified: Wed, Apr 16, 2025 02:15:28 PM
+//Last modified: Wed, Apr 16, 2025 02:17:48 PM
 //Codeset: 1252
 requires maya "2025ff03";
 requires "stereoCamera" "10.0";
@@ -12,7 +12,7 @@ fileInfo "product" "Maya 2025";
 fileInfo "version" "2025";
 fileInfo "cutIdentifier" "202409190603-cbdc5a7e54";
 fileInfo "osv" "Windows 10 Home v2009 (Build: 19045)";
-fileInfo "UUID" "350FFFD3-46E7-FEAF-4FAC-E08F18314BA0";
+fileInfo "UUID" "D46A92C6-432D-9928-ECCB-178B58B1A3C3";
 createNode transform -s -n "persp";
 	rename -uid "7399CA46-41F7-4194-0CCC-D7B51098193F";
 	setAttr ".v" no;
@@ -46537,8 +46537,8 @@ createNode mesh -n "DeskBaseShape" -p "DeskBase";
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 createNode transform -n "camera1";
 	rename -uid "FA8D7571-4F6E-28B6-C16A-C4AA717ABA7A";
-	setAttr ".t" -type "double3" 11.120462770189269 12.869193553577901 10.098437977969796 ;
-	setAttr ".r" -type "double3" -40.847344685028553 47.741062513271594 -4.0700507277724398 ;
+	setAttr ".t" -type "double3" 9.7880024708130069 13.989547726360531 10.894967204442176 ;
+	setAttr ".r" -type "double3" -36.35238880399622 42.095932574903181 2.2848559328012024 ;
 createNode camera -n "cameraShape1" -p "camera1";
 	rename -uid "09D9CFAB-4D38-A3DD-DD66-A481F66DB999";
 	setAttr -k off ".v";
@@ -46773,7 +46773,7 @@ createNode polyCube -n "polyCube1";
 	setAttr ".cuv" 4;
 createNode aiPhysicalSky -n "aiPhysicalSky1";
 	rename -uid "F7025A4B-40D5-D6FC-3D82-51B8FD9808F1";
-	setAttr ".sky_tint" -type "float3" 0 0.84523809 0.84523809 ;
+	setAttr ".sky_tint" -type "float3" 0 0.33115703 0.61500001 ;
 	setAttr ".intensity" 4.4017858505249023;
 select -ne :time1;
 	setAttr ".o" 1;
