@@ -1,6 +1,6 @@
 //Maya ASCII 2025ff03 scene
 //Name: Challenge11_TurnWhiteboxToFinished.ma
-//Last modified: Wed, Apr 16, 2025 08:10:47 AM
+//Last modified: Wed, Apr 16, 2025 08:12:37 AM
 //Codeset: 1252
 requires maya "2025ff03";
 requires -nodeType "aiOptions" -nodeType "aiAOVDriver" -nodeType "aiAOVFilter" -nodeType "aiImagerDenoiserOidn"
@@ -11,11 +11,11 @@ fileInfo "product" "Maya 2025";
 fileInfo "version" "2025";
 fileInfo "cutIdentifier" "202409190603-cbdc5a7e54";
 fileInfo "osv" "Windows 10 Home v2009 (Build: 19045)";
-fileInfo "UUID" "8A4DF694-4067-FC4E-A540-42A690FD54F0";
+fileInfo "UUID" "18506644-42CA-485C-744D-07A4C8C91863";
 createNode transform -s -n "persp";
 	rename -uid "7399CA46-41F7-4194-0CCC-D7B51098193F";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 19.122785186769573 9.4396530637875475 19.580117710976101 ;
+	setAttr ".t" -type "double3" 12.817400077708971 7.1776234107642187 13.186072411949343 ;
 	setAttr ".r" -type "double3" -14.138352727907913 764.59999999970603 1.1167269439633832e-15 ;
 	setAttr ".rp" -type "double3" -7.1054273576010019e-15 -5.773159728050814e-15 -5.6843418860808015e-14 ;
 	setAttr ".rpt" -type "double3" -4.2785288456568606e-14 -2.2913482155291947e-14 5.8570784476885609e-14 ;
@@ -24,7 +24,7 @@ createNode camera -s -n "perspShape" -p "persp";
 	setAttr -k off ".v" no;
 	setAttr ".pze" yes;
 	setAttr ".fl" 34.999999999999979;
-	setAttr ".coi" 26.511059022923426;
+	setAttr ".coi" 17.250471848735913;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -24075,8 +24075,8 @@ createNode mesh -n "ComputerButtonShape" -p "ComputerButton";
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 createNode lightLinker -s -n "lightLinker1";
 	rename -uid "390FF590-4C0E-79D0-E542-A283E21B4A6B";
-	setAttr -s 5 ".lnk";
-	setAttr -s 5 ".slnk";
+	setAttr -s 6 ".lnk";
+	setAttr -s 6 ".slnk";
 createNode shapeEditorManager -n "shapeEditorManager";
 	rename -uid "D5CC557E-47C4-31EC-08CE-6EA52B03BB74";
 createNode poseInterpolatorManager -n "poseInterpolatorManager";
@@ -24178,6 +24178,7 @@ createNode lambert -n "WoodTexture";
 createNode shadingEngine -n "lambert3SG";
 	rename -uid "7DC3379E-4CAF-56A5-5127-64B338FD10B8";
 	setAttr ".ihi" 0;
+	setAttr -s 15 ".dsm";
 	setAttr ".ro" yes;
 createNode materialInfo -n "materialInfo3";
 	rename -uid "9B12420F-4CBE-E973-E008-B5A32555AB2E";
@@ -24185,31 +24186,46 @@ createNode wood -n "WoodMaterial";
 	rename -uid "9CF80682-4FAC-A9D6-4D54-08BD0815993F";
 	setAttr ".fc" -type "float3" 0.39160839 0.29798353 0.22384413 ;
 	setAttr ".vc" -type "float3" 0.083916083 0.041690797 0.020845393 ;
+createNode lambert -n "FloorBaseTexture";
+	rename -uid "BEE58805-40B9-1BB1-ED0A-7E95650D9D53";
+	setAttr ".c" -type "float3" 1 1 1 ;
+createNode shadingEngine -n "lambert4SG";
+	rename -uid "F53CA0D2-4B41-9ED7-9C66-0D9C118DF85D";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "materialInfo4";
+	rename -uid "C4323FDA-4ADF-0CD2-A1E3-EB91AB2C0490";
 createNode nodeGraphEditorInfo -n "hyperShadePrimaryNodeEditorSavedTabsInfo";
-	rename -uid "572AB667-4EF0-3990-C953-E8AD2C8CEC01";
+	rename -uid "DAA58E9C-4A70-A73D-D480-EA9795A6F730";
 	setAttr ".tgi[0].tn" -type "string" "Untitled_1";
 	setAttr ".tgi[0].vl" -type "double2" -321.90114151792869 -989.07291837611808 ;
-	setAttr ".tgi[0].vh" -type "double2" 1120.9559440052244 482.35559458313702 ;
-	setAttr -s 7 ".tgi[0].ni";
+	setAttr ".tgi[0].vh" -type "double2" 1120.9559440052242 482.35559458313708 ;
+	setAttr -s 9 ".tgi[0].ni";
 	setAttr ".tgi[0].ni[0].x" 24.285715103149414;
 	setAttr ".tgi[0].ni[0].y" -304.28570556640625;
 	setAttr ".tgi[0].ni[0].nvs" 1923;
 	setAttr ".tgi[0].ni[1].x" 331.42855834960938;
 	setAttr ".tgi[0].ni[1].y" -304.28570556640625;
 	setAttr ".tgi[0].ni[1].nvs" 1923;
-	setAttr ".tgi[0].ni[2].x" 197.14285278320312;
+	setAttr ".tgi[0].ni[2].x" 888.5714111328125;
+	setAttr ".tgi[0].ni[2].y" 138.57142639160156;
 	setAttr ".tgi[0].ni[2].nvs" 1923;
-	setAttr ".tgi[0].ni[3].x" -110;
+	setAttr ".tgi[0].ni[3].x" 581.4285888671875;
+	setAttr ".tgi[0].ni[3].y" 138.57142639160156;
 	setAttr ".tgi[0].ni[3].nvs" 1923;
-	setAttr ".tgi[0].ni[4].x" 24.285715103149414;
-	setAttr ".tgi[0].ni[4].y" 318.57144165039062;
+	setAttr ".tgi[0].ni[4].x" 197.14285278320312;
 	setAttr ".tgi[0].ni[4].nvs" 1923;
-	setAttr ".tgi[0].ni[5].x" 331.42855834960938;
-	setAttr ".tgi[0].ni[5].y" 318.57144165039062;
+	setAttr ".tgi[0].ni[5].x" -110;
 	setAttr ".tgi[0].ni[5].nvs" 1923;
-	setAttr ".tgi[0].ni[6].x" 561.4285888671875;
-	setAttr ".tgi[0].ni[6].y" -487.14285278320312;
+	setAttr ".tgi[0].ni[6].x" 24.285715103149414;
+	setAttr ".tgi[0].ni[6].y" 318.57144165039062;
 	setAttr ".tgi[0].ni[6].nvs" 1923;
+	setAttr ".tgi[0].ni[7].x" 331.42855834960938;
+	setAttr ".tgi[0].ni[7].y" 318.57144165039062;
+	setAttr ".tgi[0].ni[7].nvs" 1923;
+	setAttr ".tgi[0].ni[8].x" 561.4285888671875;
+	setAttr ".tgi[0].ni[8].y" -487.14285278320312;
+	setAttr ".tgi[0].ni[8].nvs" 1923;
 select -ne :time1;
 	setAttr ".o" 1;
 	setAttr ".unw" 1;
@@ -24221,10 +24237,10 @@ select -ne :hardwareRenderingGlobals;
 	setAttr ".fprt" yes;
 	setAttr ".rtfm" 1;
 select -ne :renderPartition;
-	setAttr -s 5 ".st";
+	setAttr -s 6 ".st";
 select -ne :renderGlobalsList1;
 select -ne :defaultShaderList1;
-	setAttr -s 8 ".s";
+	setAttr -s 9 ".s";
 select -ne :postProcessList1;
 	setAttr -s 2 ".p";
 select -ne :defaultRenderingList1;
@@ -24233,7 +24249,7 @@ select -ne :standardSurface1;
 	setAttr ".bc" -type "float3" 0.40000001 0.40000001 0.40000001 ;
 	setAttr ".sr" 0.5;
 select -ne :initialShadingGroup;
-	setAttr -s 35 ".dsm";
+	setAttr -s 19 ".dsm";
 	setAttr ".ro" yes;
 select -ne :initialParticleSE;
 	setAttr ".ro" yes;
@@ -24262,11 +24278,13 @@ relationship "link" ":lightLinker1" ":initialParticleSE.message" ":defaultLightS
 relationship "link" ":lightLinker1" "lambert2SG.message" ":defaultLightSet.message";
 relationship "link" ":lightLinker1" "blinn1SG.message" ":defaultLightSet.message";
 relationship "link" ":lightLinker1" "lambert3SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "lambert4SG.message" ":defaultLightSet.message";
 relationship "shadowLink" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
 relationship "shadowLink" ":lightLinker1" ":initialParticleSE.message" ":defaultLightSet.message";
 relationship "shadowLink" ":lightLinker1" "lambert2SG.message" ":defaultLightSet.message";
 relationship "shadowLink" ":lightLinker1" "blinn1SG.message" ":defaultLightSet.message";
 relationship "shadowLink" ":lightLinker1" "lambert3SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "lambert4SG.message" ":defaultLightSet.message";
 connectAttr "layerManager.dli[0]" "defaultLayer.id";
 connectAttr "renderLayerManager.rlmi[0]" "defaultRenderLayer.rlid";
 connectAttr ":defaultArnoldDenoiser.msg" ":defaultArnoldRenderOptions.imagers" -na
@@ -24284,46 +24302,55 @@ connectAttr "ComputerScreenShape.iog" "blinn1SG.dsm" -na;
 connectAttr "blinn1SG.msg" "materialInfo2.sg";
 connectAttr "ScreenTexture.msg" "materialInfo2.m";
 connectAttr "WoodTexture.oc" "lambert3SG.ss";
+connectAttr "WoodBoardShape15.iog" "lambert3SG.dsm" -na;
+connectAttr "WoodBoardShape14.iog" "lambert3SG.dsm" -na;
+connectAttr "WoodBoardShape13.iog" "lambert3SG.dsm" -na;
+connectAttr "WoodBoardShape12.iog" "lambert3SG.dsm" -na;
+connectAttr "WoodBoardShape11.iog" "lambert3SG.dsm" -na;
+connectAttr "WoodBoardShape10.iog" "lambert3SG.dsm" -na;
+connectAttr "WoodBoardShape9.iog" "lambert3SG.dsm" -na;
+connectAttr "WoodBoardShape8.iog" "lambert3SG.dsm" -na;
+connectAttr "WoodBoardShape7.iog" "lambert3SG.dsm" -na;
+connectAttr "WoodBoardShape6.iog" "lambert3SG.dsm" -na;
+connectAttr "WoodBoardShape5.iog" "lambert3SG.dsm" -na;
+connectAttr "WoodBoardShape4.iog" "lambert3SG.dsm" -na;
+connectAttr "WoodBoardShape3.iog" "lambert3SG.dsm" -na;
+connectAttr "WoodBoardShape2.iog" "lambert3SG.dsm" -na;
+connectAttr "WoodBoardShape1.iog" "lambert3SG.dsm" -na;
 connectAttr "lambert3SG.msg" "materialInfo3.sg";
 connectAttr "WoodTexture.msg" "materialInfo3.m";
+connectAttr "FloorBaseTexture.oc" "lambert4SG.ss";
+connectAttr "FloorBaseShape.iog" "lambert4SG.dsm" -na;
+connectAttr "lambert4SG.msg" "materialInfo4.sg";
+connectAttr "FloorBaseTexture.msg" "materialInfo4.m";
 connectAttr "ScreenTexture.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[0].dn"
 		;
 connectAttr "blinn1SG.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[1].dn"
 		;
-connectAttr "lambert2SG.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[2].dn"
+connectAttr "lambert4SG.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[2].dn"
 		;
-connectAttr "ComputerTexture.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[3].dn"
+connectAttr "FloorBaseTexture.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[3].dn"
 		;
-connectAttr "WoodTexture.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[4].dn"
+connectAttr "lambert2SG.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[4].dn"
 		;
-connectAttr "lambert3SG.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[5].dn"
+connectAttr "ComputerTexture.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[5].dn"
 		;
-connectAttr "WoodMaterial.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[6].dn"
+connectAttr "WoodTexture.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[6].dn"
+		;
+connectAttr "lambert3SG.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[7].dn"
+		;
+connectAttr "WoodMaterial.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[8].dn"
 		;
 connectAttr "lambert2SG.pa" ":renderPartition.st" -na;
 connectAttr "blinn1SG.pa" ":renderPartition.st" -na;
 connectAttr "lambert3SG.pa" ":renderPartition.st" -na;
+connectAttr "lambert4SG.pa" ":renderPartition.st" -na;
 connectAttr "ComputerTexture.msg" ":defaultShaderList1.s" -na;
 connectAttr "ScreenTexture.msg" ":defaultShaderList1.s" -na;
 connectAttr "WoodTexture.msg" ":defaultShaderList1.s" -na;
+connectAttr "FloorBaseTexture.msg" ":defaultShaderList1.s" -na;
 connectAttr "defaultRenderLayer.msg" ":defaultRenderingList1.r" -na;
 connectAttr "WoodMaterial.msg" ":defaultTextureList1.tx" -na;
-connectAttr "FloorBaseShape.iog" ":initialShadingGroup.dsm" -na;
-connectAttr "WoodBoardShape1.iog" ":initialShadingGroup.dsm" -na;
-connectAttr "WoodBoardShape2.iog" ":initialShadingGroup.dsm" -na;
-connectAttr "WoodBoardShape3.iog" ":initialShadingGroup.dsm" -na;
-connectAttr "WoodBoardShape4.iog" ":initialShadingGroup.dsm" -na;
-connectAttr "WoodBoardShape5.iog" ":initialShadingGroup.dsm" -na;
-connectAttr "WoodBoardShape6.iog" ":initialShadingGroup.dsm" -na;
-connectAttr "WoodBoardShape7.iog" ":initialShadingGroup.dsm" -na;
-connectAttr "WoodBoardShape8.iog" ":initialShadingGroup.dsm" -na;
-connectAttr "WoodBoardShape9.iog" ":initialShadingGroup.dsm" -na;
-connectAttr "WoodBoardShape10.iog" ":initialShadingGroup.dsm" -na;
-connectAttr "WoodBoardShape11.iog" ":initialShadingGroup.dsm" -na;
-connectAttr "WoodBoardShape12.iog" ":initialShadingGroup.dsm" -na;
-connectAttr "WoodBoardShape13.iog" ":initialShadingGroup.dsm" -na;
-connectAttr "WoodBoardShape14.iog" ":initialShadingGroup.dsm" -na;
-connectAttr "WoodBoardShape15.iog" ":initialShadingGroup.dsm" -na;
 connectAttr "WallsShape.iog" ":initialShadingGroup.dsm" -na;
 connectAttr "TopOfWallsShape.iog" ":initialShadingGroup.dsm" -na;
 connectAttr "ShelfWBShape.iog" ":initialShadingGroup.dsm" -na;
