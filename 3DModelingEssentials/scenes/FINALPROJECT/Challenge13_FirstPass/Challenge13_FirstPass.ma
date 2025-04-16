@@ -1,6 +1,6 @@
 //Maya ASCII 2025ff03 scene
 //Name: Challenge13_FirstPass.ma
-//Last modified: Wed, Apr 16, 2025 02:14:16 PM
+//Last modified: Wed, Apr 16, 2025 02:15:28 PM
 //Codeset: 1252
 requires maya "2025ff03";
 requires "stereoCamera" "10.0";
@@ -12,12 +12,12 @@ fileInfo "product" "Maya 2025";
 fileInfo "version" "2025";
 fileInfo "cutIdentifier" "202409190603-cbdc5a7e54";
 fileInfo "osv" "Windows 10 Home v2009 (Build: 19045)";
-fileInfo "UUID" "21B1E01E-440F-CB9D-F520-19B7D85BCF44";
+fileInfo "UUID" "350FFFD3-46E7-FEAF-4FAC-E08F18314BA0";
 createNode transform -s -n "persp";
 	rename -uid "7399CA46-41F7-4194-0CCC-D7B51098193F";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 13.482327092792595 9.2203593093229372 15.50291480743012 ;
-	setAttr ".r" -type "double3" -15.938352736297304 1481.3999999997968 -1.0600279112733501e-15 ;
+	setAttr ".t" -type "double3" 22.187788179767416 22.537075385456433 20.39021189649587 ;
+	setAttr ".r" -type "double3" -32.738352736304243 1487.7999999997533 0 ;
 	setAttr ".rp" -type "double3" -7.1054273576010019e-15 -5.773159728050814e-15 -5.6843418860808015e-14 ;
 	setAttr ".rpt" -type "double3" -4.2785288456568606e-14 -2.2913482155291947e-14 5.8570784476885609e-14 ;
 createNode camera -s -n "perspShape" -p "persp";
@@ -25,7 +25,7 @@ createNode camera -s -n "perspShape" -p "persp";
 	setAttr -k off ".v" no;
 	setAttr ".pze" yes;
 	setAttr ".fl" 34.999999999999979;
-	setAttr ".coi" 20.778373879848594;
+	setAttr ".coi" 35.174548087468629;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -46537,8 +46537,8 @@ createNode mesh -n "DeskBaseShape" -p "DeskBase";
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 createNode transform -n "camera1";
 	rename -uid "FA8D7571-4F6E-28B6-C16A-C4AA717ABA7A";
-	setAttr ".t" -type "double3" 6.5130828040823019 8.6708112595666975 5.5251696302680813 ;
-	setAttr ".r" -type "double3" -37.916762175201974 44.296046214926989 0 ;
+	setAttr ".t" -type "double3" 11.120462770189269 12.869193553577901 10.098437977969796 ;
+	setAttr ".r" -type "double3" -40.847344685028553 47.741062513271594 -4.0700507277724398 ;
 createNode camera -n "cameraShape1" -p "camera1";
 	rename -uid "09D9CFAB-4D38-A3DD-DD66-A481F66DB999";
 	setAttr -k off ".v";
@@ -46643,7 +46643,9 @@ createNode script -n "sceneConfigurationScriptNode";
 	setAttr ".st" 6;
 createNode aiOptions -s -n "defaultArnoldRenderOptions";
 	rename -uid "BDF6B47D-4E55-4C2E-A08F-1E8A268158B3";
+	addAttr -ci true -sn "ARV_options" -ln "ARV_options" -dt "string";
 	setAttr ".version" -type "string" "5.4.5";
+	setAttr ".ARV_options" -type "string" "Test Resolution=100%;Camera=cameraShape1;Color Management.Gamma=1;Color Management.Exposure=0;Background.BG=BG Color;Background.Color=0 0 0;Background.Image=;Background.Scale=1 1;Background.Offset=0 0;Background.Apply Color Management=1;Foreground.Enable FG=0;Foreground.Image=;Foreground.Scale=1 1;Foreground.Offset=0 0;Foreground.Apply Color Management=1;";
 createNode aiAOVFilter -s -n "defaultArnoldFilter";
 	rename -uid "0BBCCBDA-48FE-6EE8-FB48-50BC18514274";
 	setAttr ".ai_translator" -type "string" "gaussian";
