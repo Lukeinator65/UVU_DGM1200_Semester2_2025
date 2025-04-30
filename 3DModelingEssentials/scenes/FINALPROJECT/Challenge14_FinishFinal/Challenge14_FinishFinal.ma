@@ -1,6 +1,6 @@
 //Maya ASCII 2025ff03 scene
 //Name: Challenge14_FinishFinal.ma
-//Last modified: Wed, Apr 30, 2025 12:50:44 AM
+//Last modified: Wed, Apr 30, 2025 12:56:29 AM
 //Codeset: 1252
 requires maya "2025ff03";
 requires "stereoCamera" "10.0";
@@ -14,12 +14,12 @@ fileInfo "product" "Maya 2025";
 fileInfo "version" "2025";
 fileInfo "cutIdentifier" "202409190603-cbdc5a7e54";
 fileInfo "osv" "Windows 10 Home v2009 (Build: 19045)";
-fileInfo "UUID" "01A0D1C1-44BD-D591-E6A0-CF89C2390D4E";
+fileInfo "UUID" "20969722-4A3B-6CE6-EC62-A0B6567668F2";
 createNode transform -s -n "persp";
 	rename -uid "7399CA46-41F7-4194-0CCC-D7B51098193F";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 13.474573252115103 11.671701045811835 15.259309728922535 ;
-	setAttr ".r" -type "double3" -23.738352738162845 399.79999999985876 4.1398189389516603e-15 ;
+	setAttr ".t" -type "double3" 16.189111353578333 19.169852921416577 28.973740477711608 ;
+	setAttr ".r" -type "double3" -20.138352738163711 392.19999999982281 0 ;
 	setAttr ".rp" -type "double3" -7.1054273576010019e-15 -5.773159728050814e-15 -5.6843418860808015e-14 ;
 	setAttr ".rpt" -type "double3" -4.2785288456568606e-14 -2.2913482155291947e-14 5.8570784476885609e-14 ;
 createNode camera -s -n "perspShape" -p "persp";
@@ -27,7 +27,7 @@ createNode camera -s -n "perspShape" -p "persp";
 	setAttr -k off ".v" no;
 	setAttr ".pze" yes;
 	setAttr ".fl" 34.999999999999979;
-	setAttr ".coi" 24.268740356509042;
+	setAttr ".coi" 21.105408066094405;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -46401,13 +46401,13 @@ createNode mesh -n "DeskBaseShape" -p "DeskBase";
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 createNode transform -n "camera1";
 	rename -uid "FA8D7571-4F6E-28B6-C16A-C4AA717ABA7A";
-	setAttr ".t" -type "double3" 9.7880024708130069 13.989547726360531 10.894967204442176 ;
-	setAttr ".r" -type "double3" -36.352388803996227 42.095932574903181 2.2848559328011984 ;
-	setAttr ".s" -type "double3" 0.99999999999999989 1 0.99999999999999989 ;
-	setAttr ".rp" -type "double3" 1.6653345369377343e-16 4.4408920985006262e-16 -3.5527136788005001e-15 ;
-	setAttr ".rpt" -type "double3" -2.0663092056647624e-15 -2.2694870733224449e-15 1.1225906709479894e-15 ;
-	setAttr ".sp" -type "double3" 1.6653345369377348e-16 4.4408920985006262e-16 -3.5527136788005009e-15 ;
-	setAttr ".spt" -type "double3" -4.9303806576313232e-32 0 7.8886090522101172e-31 ;
+	setAttr ".t" -type "double3" 10.295156510016179 12.883860321247791 12.61253240600799 ;
+	setAttr ".r" -type "double3" -30.668956637509261 40.947719008650218 2.9223450323654507 ;
+	setAttr ".s" -type "double3" 0.99999999999999978 1 0.99999999999999978 ;
+	setAttr ".rp" -type "double3" -2.4407559306993672e-15 -1.3322676295501878e-15 -7.1054273576010003e-15 ;
+	setAttr ".rpt" -type "double3" -2.7125268008969902e-15 -3.7072494367345692e-15 4.6021756101749427e-15 ;
+	setAttr ".sp" -type "double3" -2.4407559306993676e-15 -1.3322676295501878e-15 -7.1054273576010019e-15 ;
+	setAttr ".spt" -type "double3" 3.9443045261050582e-31 0 1.5777218104420233e-30 ;
 createNode camera -n "cameraShape1" -p "camera1";
 	rename -uid "09D9CFAB-4D38-A3DD-DD66-A481F66DB999";
 	setAttr -k off ".v";
@@ -47247,7 +47247,7 @@ createNode aiOptions -s -n "defaultArnoldRenderOptions";
 	rename -uid "BDF6B47D-4E55-4C2E-A08F-1E8A268158B3";
 	addAttr -ci true -sn "ARV_options" -ln "ARV_options" -dt "string";
 	setAttr ".version" -type "string" "5.4.5";
-	setAttr ".ARV_options" -type "string" "Test Resolution=100%;Camera=cameraShape1;Color Management.Gamma=1;Color Management.Exposure=0;Background.BG=BG Color;Background.Color=0 0 0;Background.Image=;Background.Scale=1 1;Background.Offset=0 0;Background.Apply Color Management=1;Foreground.Enable FG=0;Foreground.Image=;Foreground.Scale=1 1;Foreground.Offset=0 0;Foreground.Apply Color Management=1;";
+	setAttr ".ARV_options" -type "string" "Test Resolution=100%;Camera=cameraShape1;Color Management.Gamma=1;Color Management.Exposure=0;Background.BG=BG Color;Background.Color=0 0 0;Background.Image=;Background.Scale=1  1;Background.Offset=0  0;Background.Apply Color Management=1;Foreground.Enable FG=0;Foreground.Image=;Foreground.Scale=1  1;Foreground.Offset=0  0;Foreground.Apply Color Management=1;";
 createNode aiAOVFilter -s -n "defaultArnoldFilter";
 	rename -uid "0BBCCBDA-48FE-6EE8-FB48-50BC18514274";
 	setAttr ".ai_translator" -type "string" "gaussian";
