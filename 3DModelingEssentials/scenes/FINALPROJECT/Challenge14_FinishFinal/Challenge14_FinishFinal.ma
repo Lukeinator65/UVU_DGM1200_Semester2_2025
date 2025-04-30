@@ -1,6 +1,6 @@
 //Maya ASCII 2025ff03 scene
 //Name: Challenge14_FinishFinal.ma
-//Last modified: Wed, Apr 30, 2025 04:39:45 AM
+//Last modified: Wed, Apr 30, 2025 04:41:11 AM
 //Codeset: 1252
 requires maya "2025ff03";
 requires "stereoCamera" "10.0";
@@ -14,12 +14,12 @@ fileInfo "product" "Maya 2025";
 fileInfo "version" "2025";
 fileInfo "cutIdentifier" "202409190603-cbdc5a7e54";
 fileInfo "osv" "Windows 10 Home v2009 (Build: 19045)";
-fileInfo "UUID" "5744A1FE-4006-B5F3-616C-148089FEF68F";
+fileInfo "UUID" "D225FFE8-4E06-69CE-FF81-6FB3E5159CCF";
 createNode transform -s -n "persp";
 	rename -uid "7399CA46-41F7-4194-0CCC-D7B51098193F";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 16.377277966013029 15.045623875201684 19.17878960590842 ;
-	setAttr ".r" -type "double3" -26.738352738302851 43.000000000000306 -2.174429878745391e-15 ;
+	setAttr ".t" -type "double3" 9.1399507877749357 8.9437059679266451 14.190147106333979 ;
+	setAttr ".r" -type "double3" -21.93835273830129 37.000000000002046 -1.9912429646881466e-15 ;
 	setAttr ".rp" -type "double3" -7.1609385088322597e-15 -7.7715611723760958e-15 -5.6843418860808015e-14 ;
 	setAttr ".rpt" -type "double3" -2.2502284770654672e-14 -2.3243017701651695e-14 1.8100167150264429e-14 ;
 	setAttr ".sp" -type "double3" -5.5511151231257827e-17 -6.6613381477509392e-16 0 ;
@@ -28,7 +28,7 @@ createNode camera -s -n "perspShape" -p "persp";
 	setAttr -k off ".v" no;
 	setAttr ".pze" yes;
 	setAttr ".fl" 34.999999999999979;
-	setAttr ".coi" 29.75584818510784;
+	setAttr ".coi" 19.500990528266779;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -40831,6 +40831,8 @@ createNode mesh -n "ControllerWireShape" -p "ControllerWire";
 	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
+	setAttr ".dr" 3;
+	setAttr ".dsm" 2;
 createNode transform -n "PlantStem";
 	rename -uid "0722F7D4-456B-A9FE-7AD4-C9A10DDC71CD";
 	setAttr ".rp" -type "double3" 3.3928728103637695 5.9155020713806152 -2.9820621013641357 ;
