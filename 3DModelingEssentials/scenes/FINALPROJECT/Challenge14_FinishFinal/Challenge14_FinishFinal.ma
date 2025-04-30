@@ -1,6 +1,6 @@
 //Maya ASCII 2025ff03 scene
 //Name: Challenge14_FinishFinal.ma
-//Last modified: Wed, Apr 30, 2025 12:04:36 PM
+//Last modified: Wed, Apr 30, 2025 12:08:26 PM
 //Codeset: 1252
 requires maya "2025ff03";
 requires "stereoCamera" "10.0";
@@ -14,12 +14,12 @@ fileInfo "product" "Maya 2025";
 fileInfo "version" "2025";
 fileInfo "cutIdentifier" "202409190603-cbdc5a7e54";
 fileInfo "osv" "Windows 10 Home v2009 (Build: 19045)";
-fileInfo "UUID" "01112416-4FC6-0C7E-62D5-E9A17268E595";
+fileInfo "UUID" "AF27B11A-47E0-CDE8-4059-039C41A60142";
 createNode transform -s -n "persp";
 	rename -uid "7399CA46-41F7-4194-0CCC-D7B51098193F";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 26.064977716032104 14.119406552069883 43.675725871875102 ;
-	setAttr ".r" -type "double3" -11.138352767349064 -331.39999999966398 4.5282123493386891e-16 ;
+	setAttr ".t" -type "double3" 14.17010936482359 11.133266819786808 15.338651131209987 ;
+	setAttr ".r" -type "double3" -20.738352767347813 -315.79999999964696 -2.2182365887332473e-15 ;
 	setAttr ".rp" -type "double3" -7.1609385088322597e-15 -7.7715611723760958e-15 -5.6843418860808015e-14 ;
 	setAttr ".rpt" -type "double3" -2.2502284770654672e-14 -2.3243017701651695e-14 1.8100167150264429e-14 ;
 	setAttr ".sp" -type "double3" -5.5511151231257827e-17 -6.6613381477509392e-16 0 ;
@@ -28,7 +28,7 @@ createNode camera -s -n "perspShape" -p "persp";
 	setAttr -k off ".v" no;
 	setAttr ".pze" yes;
 	setAttr ".fl" 34.999999999999979;
-	setAttr ".coi" 54.010619996640564;
+	setAttr ".coi" 23.616956205778767;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -58557,7 +58557,7 @@ createNode lambert -n "ChairWhite";
 createNode shadingEngine -n "lambert8SG";
 	rename -uid "C82B96B1-4804-CC96-4616-F6A739BE2138";
 	setAttr ".ihi" 0;
-	setAttr -s 10 ".dsm";
+	setAttr -s 7 ".dsm";
 	setAttr ".ro" yes;
 	setAttr -s 2 ".gn";
 createNode materialInfo -n "materialInfo9";
@@ -58650,12 +58650,22 @@ createNode groupId -n "groupId13";
 createNode groupId -n "groupId14";
 	rename -uid "8463DC3B-49D6-A0E9-0105-C58F90F82993";
 	setAttr ".ihi" 0;
+createNode lambert -n "BackpackColor";
+	rename -uid "BC773FA6-4F51-6390-F4E7-468852CBAE1C";
+	setAttr ".c" -type "float3" 0.0836 0.096299998 0.207 ;
+createNode shadingEngine -n "lambert12SG";
+	rename -uid "DE5C4CAF-48CA-B336-241E-BE9AD5DDE439";
+	setAttr ".ihi" 0;
+	setAttr -s 4 ".dsm";
+	setAttr ".ro" yes;
+createNode materialInfo -n "materialInfo14";
+	rename -uid "B467F881-42C3-4952-3763-F6992D096F15";
 createNode nodeGraphEditorInfo -n "hyperShadePrimaryNodeEditorSavedTabsInfo";
-	rename -uid "7B21641A-4842-8133-13A3-F0B26AEFB166";
+	rename -uid "7705CD4F-4378-F4B5-38D2-DBA9FA7BB3E6";
 	setAttr ".tgi[0].tn" -type "string" "Untitled_1";
 	setAttr ".tgi[0].vl" -type "double2" -2545.4360298044035 -1597.5902342924462 ;
 	setAttr ".tgi[0].vh" -type "double2" -958.07078179269217 48.369032941172918 ;
-	setAttr -s 39 ".tgi[0].ni";
+	setAttr -s 41 ".tgi[0].ni";
 	setAttr ".tgi[0].ni[0].x" -1835.7142333984375;
 	setAttr ".tgi[0].ni[0].y" -1300;
 	setAttr ".tgi[0].ni[0].nvs" 1923;
@@ -58765,12 +58775,18 @@ createNode nodeGraphEditorInfo -n "hyperShadePrimaryNodeEditorSavedTabsInfo";
 	setAttr ".tgi[0].ni[36].x" 158.57142639160156;
 	setAttr ".tgi[0].ni[36].y" 821.4285888671875;
 	setAttr ".tgi[0].ni[36].nvs" 1923;
-	setAttr ".tgi[0].ni[37].x" -1990;
-	setAttr ".tgi[0].ni[37].y" -847.14288330078125;
-	setAttr ".tgi[0].ni[37].nvs" 1922;
-	setAttr ".tgi[0].ni[38].x" -1682.857177734375;
-	setAttr ".tgi[0].ni[38].y" -1458.5714111328125;
-	setAttr ".tgi[0].ni[38].nvs" 1923;
+	setAttr ".tgi[0].ni[37].x" -1679.2744140625;
+	setAttr ".tgi[0].ni[37].y" -1128.60791015625;
+	setAttr ".tgi[0].ni[37].nvs" 1923;
+	setAttr ".tgi[0].ni[38].x" -1990;
+	setAttr ".tgi[0].ni[38].y" -847.14288330078125;
+	setAttr ".tgi[0].ni[38].nvs" 1922;
+	setAttr ".tgi[0].ni[39].x" -1682.857177734375;
+	setAttr ".tgi[0].ni[39].y" -1458.5714111328125;
+	setAttr ".tgi[0].ni[39].nvs" 1923;
+	setAttr ".tgi[0].ni[40].x" -1414.745361328125;
+	setAttr ".tgi[0].ni[40].y" -1196.7421875;
+	setAttr ".tgi[0].ni[40].nvs" 1923;
 select -ne :time1;
 	setAttr ".o" 1;
 	setAttr ".unw" 1;
@@ -58782,10 +58798,10 @@ select -ne :hardwareRenderingGlobals;
 	setAttr ".fprt" yes;
 	setAttr ".rtfm" 1;
 select -ne :renderPartition;
-	setAttr -s 15 ".st";
+	setAttr -s 16 ".st";
 select -ne :renderGlobalsList1;
 select -ne :defaultShaderList1;
-	setAttr -s 17 ".s";
+	setAttr -s 18 ".s";
 select -ne :postProcessList1;
 	setAttr -s 2 ".p";
 select -ne :defaultRenderUtilityList1;
@@ -58798,7 +58814,7 @@ select -ne :defaultTextureList1;
 select -ne :standardSurface1;
 	setAttr ".sr" 0.5;
 select -ne :initialShadingGroup;
-	setAttr -s 21 ".dsm";
+	setAttr -s 20 ".dsm";
 	setAttr ".ro" yes;
 	setAttr -s 4 ".gn";
 select -ne :initialParticleSE;
@@ -58864,6 +58880,7 @@ relationship "link" ":lightLinker1" "blinn2SG.message" ":defaultLightSet.message
 relationship "link" ":lightLinker1" "lambert9SG.message" ":defaultLightSet.message";
 relationship "link" ":lightLinker1" "lambert10SG.message" ":defaultLightSet.message";
 relationship "link" ":lightLinker1" "lambert11SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "lambert12SG.message" ":defaultLightSet.message";
 relationship "shadowLink" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
 relationship "shadowLink" ":lightLinker1" ":initialParticleSE.message" ":defaultLightSet.message";
 relationship "shadowLink" ":lightLinker1" "lambert2SG.message" ":defaultLightSet.message";
@@ -58879,6 +58896,7 @@ relationship "shadowLink" ":lightLinker1" "blinn2SG.message" ":defaultLightSet.m
 relationship "shadowLink" ":lightLinker1" "lambert9SG.message" ":defaultLightSet.message";
 relationship "shadowLink" ":lightLinker1" "lambert10SG.message" ":defaultLightSet.message";
 relationship "shadowLink" ":lightLinker1" "lambert11SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "lambert12SG.message" ":defaultLightSet.message";
 connectAttr "layerManager.dli[0]" "defaultLayer.id";
 connectAttr "renderLayerManager.rlmi[0]" "defaultRenderLayer.rlid";
 connectAttr ":defaultArnoldDenoiser.msg" ":defaultArnoldRenderOptions.imagers" -na
@@ -58999,8 +59017,6 @@ connectAttr "ChairLegsShape.iog" "lambert8SG.dsm" -na;
 connectAttr "ChairSeatWBShape.iog.og[0]" "lambert8SG.dsm" -na;
 connectAttr "ChairBackShape.iog" "lambert8SG.dsm" -na;
 connectAttr "ChairHeadRestWBShape.iog.og[2]" "lambert8SG.dsm" -na;
-connectAttr "BackpackStrap1Shape.iog" "lambert8SG.dsm" -na;
-connectAttr "BackpackStrap2Shape.iog" "lambert8SG.dsm" -na;
 connectAttr "groupId3.msg" "lambert8SG.gn" -na;
 connectAttr "groupId7.msg" "lambert8SG.gn" -na;
 connectAttr "lambert8SG.msg" "materialInfo9.sg";
@@ -59073,6 +59089,13 @@ connectAttr "groupId11.msg" "lambert11SG.gn" -na;
 connectAttr "groupId14.msg" "lambert11SG.gn" -na;
 connectAttr "lambert11SG.msg" "materialInfo13.sg";
 connectAttr "BookCover.msg" "materialInfo13.m";
+connectAttr "BackpackColor.oc" "lambert12SG.ss";
+connectAttr "BackpackWBShape.iog" "lambert12SG.dsm" -na;
+connectAttr "BackpackStrap1Shape.iog" "lambert12SG.dsm" -na;
+connectAttr "BackpackStrap2Shape.iog" "lambert12SG.dsm" -na;
+connectAttr "BackpackWB1Shape.iog" "lambert12SG.dsm" -na;
+connectAttr "lambert12SG.msg" "materialInfo14.sg";
+connectAttr "BackpackColor.msg" "materialInfo14.m";
 connectAttr "BackpackWB1.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[0].dn"
 		;
 connectAttr "BackpackWB1Shape.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[1].dn"
@@ -59147,9 +59170,13 @@ connectAttr "WoodTexture.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].n
 		;
 connectAttr "lambert6SG.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[36].dn"
 		;
-connectAttr "BackpackStrap2Shape.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[37].dn"
+connectAttr "BackpackColor.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[37].dn"
 		;
-connectAttr "BackpackStrap2.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[38].dn"
+connectAttr "BackpackStrap2Shape.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[38].dn"
+		;
+connectAttr "BackpackStrap2.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[39].dn"
+		;
+connectAttr "lambert12SG.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[40].dn"
 		;
 connectAttr "lambert2SG.pa" ":renderPartition.st" -na;
 connectAttr "blinn1SG.pa" ":renderPartition.st" -na;
@@ -59164,6 +59191,7 @@ connectAttr "blinn2SG.pa" ":renderPartition.st" -na;
 connectAttr "lambert9SG.pa" ":renderPartition.st" -na;
 connectAttr "lambert10SG.pa" ":renderPartition.st" -na;
 connectAttr "lambert11SG.pa" ":renderPartition.st" -na;
+connectAttr "lambert12SG.pa" ":renderPartition.st" -na;
 connectAttr "ComputerTexture.msg" ":defaultShaderList1.s" -na;
 connectAttr "ScreenTexture.msg" ":defaultShaderList1.s" -na;
 connectAttr "WoodTexture.msg" ":defaultShaderList1.s" -na;
@@ -59176,6 +59204,7 @@ connectAttr "blinn2.msg" ":defaultShaderList1.s" -na;
 connectAttr "ChairCoushin.msg" ":defaultShaderList1.s" -na;
 connectAttr "PlantColor.msg" ":defaultShaderList1.s" -na;
 connectAttr "BookCover.msg" ":defaultShaderList1.s" -na;
+connectAttr "BackpackColor.msg" ":defaultShaderList1.s" -na;
 connectAttr "place2dTexture2.msg" ":defaultRenderUtilityList1.u" -na;
 connectAttr "place2dTexture3.msg" ":defaultRenderUtilityList1.u" -na;
 connectAttr "defaultRenderLayer.msg" ":defaultRenderingList1.r" -na;
@@ -59200,13 +59229,11 @@ connectAttr "Book6Shape.iog" ":initialShadingGroup.dsm" -na;
 connectAttr "Book7Shape.iog" ":initialShadingGroup.dsm" -na;
 connectAttr "PipeShape.iog" ":initialShadingGroup.dsm" -na;
 connectAttr "PipeThickShape.iog" ":initialShadingGroup.dsm" -na;
-connectAttr "BackpackWBShape.iog" ":initialShadingGroup.dsm" -na;
 connectAttr "FloorPlaneShape.iog" ":initialShadingGroup.dsm" -na;
 connectAttr "ChairSeatWBShape.ciog.cog[0]" ":initialShadingGroup.dsm" -na;
 connectAttr "ChairHeadRestWBShape.ciog.cog[1]" ":initialShadingGroup.dsm" -na;
 connectAttr "BookShape.ciog.cog[0]" ":initialShadingGroup.dsm" -na;
 connectAttr "Book8Shape.ciog.cog[0]" ":initialShadingGroup.dsm" -na;
-connectAttr "BackpackWB1Shape.iog" ":initialShadingGroup.dsm" -na;
 connectAttr "groupId2.msg" ":initialShadingGroup.gn" -na;
 connectAttr "groupId6.msg" ":initialShadingGroup.gn" -na;
 connectAttr "groupId10.msg" ":initialShadingGroup.gn" -na;
