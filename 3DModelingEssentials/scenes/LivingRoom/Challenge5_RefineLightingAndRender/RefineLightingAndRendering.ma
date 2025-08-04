@@ -1,6 +1,6 @@
 //Maya ASCII 2025ff03 scene
 //Name: RefineLightingAndRendering.ma
-//Last modified: Sun, Aug 03, 2025 06:13:10 PM
+//Last modified: Sun, Aug 03, 2025 06:22:04 PM
 //Codeset: 1252
 requires maya "2025ff03";
 requires "stereoCamera" "10.0";
@@ -13,18 +13,18 @@ fileInfo "product" "Maya 2025";
 fileInfo "version" "2025";
 fileInfo "cutIdentifier" "202409190603-cbdc5a7e54";
 fileInfo "osv" "Windows 10 Home v2009 (Build: 19045)";
-fileInfo "UUID" "B2C16982-4382-0EF7-1543-3EAB57CBCD41";
+fileInfo "UUID" "A8B2B1A7-40D5-692C-6410-B299145AC688";
 createNode transform -s -n "persp";
 	rename -uid "937B2EDB-495B-23AE-38DB-E4891CA1AC59";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 37.485575074178911 16.331614120405117 32.183700517609616 ;
+	setAttr ".t" -type "double3" 19.304293043152214 10.201706068560618 16.710216656680117 ;
 	setAttr ".r" -type "double3" 345.5999999939333 49.600000000001536 -2.4536776885314405e-15 ;
 	setAttr ".rpt" -type "double3" 4.3191380705079204e-18 5.2655079106602255e-17 -5.3139580666453939e-17 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "6A068267-4C39-2EFB-A032-139887CD0243";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999979;
-	setAttr ".coi" 51.879219975280137;
+	setAttr ".coi" 27.230416925025381;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -11198,8 +11198,8 @@ createNode mesh -n "pSphereShape1" -p "pSphere1";
 		 0.048340909 0.98768836 0.14877804 0.09194988 0.98768836 0.12655815 0.12655815 0.98768836 0.091949888
 		 0.14877804 0.98768836 0.048340913 0.15643448 0.98768836 0 0 1 0;
 	setAttr -s 400 ".ed";
-	setAttr ".ed[0:165]"  0 1 1 1 2 1 2 3 1 3 4 1 4 5 1 5 6 1 6 7 1 7 8 1 8 9 1
-		 9 10 1 10 11 1 11 12 1 12 13 1 13 14 1 14 15 1 15 16 1 16 17 1 17 18 1 18 19 1 19 0 1
+	setAttr ".ed[0:165]"  0 1 0 1 2 0 2 3 0 3 4 0 4 5 0 5 6 0 6 7 0 7 8 0 8 9 0
+		 9 10 0 10 11 0 11 12 0 12 13 0 13 14 0 14 15 0 15 16 0 16 17 0 17 18 0 18 19 0 19 0 0
 		 20 21 1 21 22 1 22 23 1 23 24 1 24 25 1 25 26 1 26 27 1 27 28 1 28 29 1 29 30 1 30 31 1
 		 31 32 1 32 33 1 33 34 1 34 35 1 35 36 1 36 37 1 37 38 1 38 39 1 39 20 1 40 41 1 41 42 1
 		 42 43 1 43 44 1 44 45 1 45 46 1 46 47 1 47 48 1 48 49 1 49 50 1 50 51 1 51 52 1 52 53 1
@@ -11889,7 +11889,11 @@ createNode transform -n "LeftAreaLight";
 	rename -uid "C6083BD0-44AD-697D-1F70-539577D92CC5";
 	setAttr ".t" -type "double3" -0.10324626608765985 3.5008322705728618 4.7222640760688446 ;
 	setAttr ".r" -type "double3" -17.687062478067975 0 0 ;
-	setAttr ".s" -type "double3" 2.5444006542417275 2.5444006542417275 2.5444006542417275 ;
+	setAttr ".s" -type "double3" 2.5444006542417275 2.544400654241727 2.544400654241727 ;
+	setAttr ".rp" -type "double3" 1.7655326188815486e-17 2.8248521902104773e-16 0 ;
+	setAttr ".rpt" -type "double3" 0 -1.3353045696543089e-17 -8.5824077315157367e-17 ;
+	setAttr ".sp" -type "double3" 6.9388939039072284e-18 1.1102230246251565e-16 0 ;
+	setAttr ".spt" -type "double3" 1.0716432284908258e-17 1.714629165585321e-16 0 ;
 createNode areaLight -n "LeftAreaLightShape" -p "LeftAreaLight";
 	rename -uid "DC00381E-41B5-79BA-32BC-189CAB50D77F";
 	setAttr -k off ".v";
@@ -11908,6 +11912,10 @@ createNode transform -n "TVAreaLight";
 	setAttr ".t" -type "double3" 1.6249090852101586 1.4229412073072996 0.11150592314849606 ;
 	setAttr ".r" -type "double3" 0 90 0 ;
 	setAttr ".s" -type "double3" 0.85 0.75 0.85 ;
+	setAttr ".rp" -type "double3" 2.3592239273284576e-17 1.6653345369377348e-16 -1.8873791418627661e-16 ;
+	setAttr ".rpt" -type "double3" -2.1233015345956117e-16 0 1.6514567491299204e-16 ;
+	setAttr ".sp" -type "double3" 2.7755575615628914e-17 2.2204460492503131e-16 -2.2204460492503131e-16 ;
+	setAttr ".spt" -type "double3" -4.1633363423443376e-18 -5.5511151231257815e-17 3.3306690738754701e-17 ;
 createNode areaLight -n "TVAreaLightShape" -p "TVAreaLight";
 	rename -uid "2C0DCCE6-4F49-2408-02AD-0294D1D288AD";
 	setAttr -k off ".v";
@@ -11923,20 +11931,20 @@ createNode pointLight -n "LampPointLightShape" -p "LampPointLight";
 	setAttr ".us" no;
 	setAttr ".ai_radius" 0.05000000074505806;
 createNode lightLinker -s -n "lightLinker1";
-	rename -uid "B2E90D71-4F8D-30FD-3108-F8971637604E";
+	rename -uid "8D26C95F-4FE6-1C7A-F9F9-C6A8594EBBBC";
 	setAttr -s 15 ".lnk";
 	setAttr -s 15 ".slnk";
 createNode shapeEditorManager -n "shapeEditorManager";
-	rename -uid "88297743-436C-9357-779F-ACAC6548C431";
+	rename -uid "7EF7BEDD-4DCD-57EA-3A56-A5B459B77F21";
 createNode poseInterpolatorManager -n "poseInterpolatorManager";
-	rename -uid "83B3CA9C-4BE9-A4FB-0726-A18620C246C6";
+	rename -uid "E133E78D-4900-14EA-D63D-B8B71012D598";
 createNode displayLayerManager -n "layerManager";
-	rename -uid "C3C91B22-4E0A-D381-DB45-03989331FE83";
+	rename -uid "DBB01ED9-49D1-ED4B-421E-2A99B327F9B4";
 createNode displayLayer -n "defaultLayer";
 	rename -uid "109B455B-47FE-84AC-7441-3CA1D08962A9";
 	setAttr ".ufem" -type "stringArray" 0  ;
 createNode renderLayerManager -n "renderLayerManager";
-	rename -uid "9E043E19-476F-66CC-B886-1DBDC327F4E9";
+	rename -uid "3F02EBE4-4F82-12F5-6B0F-158ACE161C09";
 createNode renderLayer -n "defaultRenderLayer";
 	rename -uid "274982DE-406E-5FC2-C9CE-10BC9D3370B8";
 	setAttr ".g" yes;
