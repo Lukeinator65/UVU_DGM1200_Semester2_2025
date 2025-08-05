@@ -1,6 +1,6 @@
 //Maya ASCII 2025ff03 scene
 //Name: DockFinal.ma
-//Last modified: Mon, Aug 04, 2025 10:25:02 PM
+//Last modified: Mon, Aug 04, 2025 10:27:41 PM
 //Codeset: 1252
 requires maya "2025ff03";
 requires "stereoCamera" "10.0";
@@ -14,7 +14,7 @@ fileInfo "product" "Maya 2025";
 fileInfo "version" "2025";
 fileInfo "cutIdentifier" "202409190603-cbdc5a7e54";
 fileInfo "osv" "Windows 10 Home v2009 (Build: 19045)";
-fileInfo "UUID" "92F8CA99-437D-B56B-D498-B3854105BF65";
+fileInfo "UUID" "BBED2349-418D-EB32-758C-80913C49AB4B";
 createNode transform -s -n "persp";
 	rename -uid "7795DAF6-4F08-397C-2DCB-658507765368";
 	setAttr ".t" -type "double3" 12.396391552127513 11.264277528121939 11.952475021279476 ;
@@ -2526,7 +2526,6 @@ createNode camera -n "cameraShape1" -p "camera1";
 	setAttr ".tp" -type "double3" 26.387142035702659 26.521684416688071 22.971330802920946 ;
 createNode transform -n "aiAreaLight1";
 	rename -uid "9F0902B8-433C-5B0F-D199-7D996D092CAC";
-	setAttr ".v" no;
 	setAttr ".t" -type "double3" 3.8788879598444517 9.656646292680275 -0.45600260992397779 ;
 	setAttr ".r" -type "double3" -90.138265448152325 0 0 ;
 	setAttr ".s" -type "double3" 4.190975194596243 4.7924427611129952 2.7135810257665991 ;
@@ -2542,7 +2541,6 @@ createNode aiAreaLight -n "aiAreaLightShape1" -p "aiAreaLight1";
 	setAttr ".aal" -type "attributeAlias" 4 "exposure" "aiExposure" "normalize" "aiNormalize" ;
 createNode transform -n "aiSkyDomeLight1";
 	rename -uid "59CF217D-46B4-5A80-A93F-6DBD330CABA3";
-	setAttr ".v" no;
 createNode aiSkyDomeLight -n "aiSkyDomeLightShape1" -p "aiSkyDomeLight1";
 	rename -uid "38AB655D-4002-E214-026A-FA8AB0D9E4DB";
 	setAttr -k off ".v";
@@ -64086,7 +64084,8 @@ createNode blinn -n "Wood";
 	setAttr ".dc" 0.60000002384185791;
 	setAttr ".c" -type "float3" 0.71799999 0.39183679 0.13354799 ;
 	setAttr ".sc" -type "float3" 0.35664335 0.35664335 0.35664335 ;
-	setAttr ".ec" 0.58735382556915283;
+	setAttr ".rfl" 0.20000000298023224;
+	setAttr ".ec" 0.69999998807907104;
 createNode shadingEngine -n "blinn4SG";
 	rename -uid "BF1B9299-4D5A-6303-81AC-43B63D75BD84";
 	setAttr ".ihi" 0;
@@ -64099,22 +64098,22 @@ createNode groupId -n "groupId15";
 	rename -uid "7838719F-440E-9C54-BDBF-239BFC0C73DA";
 	setAttr ".ihi" 0;
 createNode nodeGraphEditorInfo -n "hyperShadePrimaryNodeEditorSavedTabsInfo";
-	rename -uid "3ACC3914-4A13-BDB7-CD15-5E8FEF6142DD";
+	rename -uid "9474CEEF-4E92-BF64-263C-C38A98F9DBB2";
 	setAttr ".tgi[0].tn" -type "string" "Untitled_1";
-	setAttr ".tgi[0].vl" -type "double2" -558.01535224309339 -485.38976599441725 ;
-	setAttr ".tgi[0].vh" -type "double2" 861.56599323009823 252.70544277155219 ;
+	setAttr ".tgi[0].vl" -type "double2" -578.70410196645184 -500.91179386564772 ;
+	setAttr ".tgi[0].vh" -type "double2" 897.04652183106748 266.38799366097669 ;
 	setAttr -s 4 ".tgi[0].ni";
-	setAttr ".tgi[0].ni[0].x" -127.62466430664062;
-	setAttr ".tgi[0].ni[0].y" 169.82720947265625;
+	setAttr ".tgi[0].ni[0].x" 158.83200073242188;
+	setAttr ".tgi[0].ni[0].y" -212.1336669921875;
 	setAttr ".tgi[0].ni[0].nvs" 1923;
-	setAttr ".tgi[0].ni[1].x" 179.5181884765625;
+	setAttr ".tgi[0].ni[1].x" -127.62466430664062;
 	setAttr ".tgi[0].ni[1].y" 169.82720947265625;
 	setAttr ".tgi[0].ni[1].nvs" 1923;
 	setAttr ".tgi[0].ni[2].x" -300.154052734375;
 	setAttr ".tgi[0].ni[2].y" -112.11834716796875;
 	setAttr ".tgi[0].ni[2].nvs" 1923;
-	setAttr ".tgi[0].ni[3].x" 158.83200073242188;
-	setAttr ".tgi[0].ni[3].y" -212.1336669921875;
+	setAttr ".tgi[0].ni[3].x" 179.5181884765625;
+	setAttr ".tgi[0].ni[3].y" 169.82720947265625;
 	setAttr ".tgi[0].ni[3].nvs" 1923;
 select -ne :time1;
 	setAttr ".o" 1;
@@ -64152,6 +64151,8 @@ select -ne :initialParticleSE;
 select -ne :defaultRenderGlobals;
 	addAttr -ci true -h true -sn "dss" -ln "defaultSurfaceShader" -dt "string";
 	setAttr ".ren" -type "string" "arnold";
+	setAttr ".outf" 51;
+	setAttr ".imfkey" -type "string" "exr";
 	setAttr ".dss" -type "string" "standardSurface1";
 select -ne :defaultResolution;
 	setAttr ".pa" 1;
@@ -72100,13 +72101,13 @@ connectAttr "groupId15.msg" "blinn4SG.gn" -na;
 connectAttr "groupId14.msg" "blinn4SG.gn" -na;
 connectAttr "blinn4SG.msg" "materialInfo4.sg";
 connectAttr "Wood.msg" "materialInfo4.m";
-connectAttr "GasColor.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[0].dn"
+connectAttr "blinn4SG.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[0].dn"
 		;
-connectAttr "lambert2SG.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[1].dn"
+connectAttr "GasColor.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[1].dn"
 		;
 connectAttr "Wood.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[2].dn"
 		;
-connectAttr "blinn4SG.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[3].dn"
+connectAttr "lambert2SG.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[3].dn"
 		;
 connectAttr "blinn1SG.pa" ":renderPartition.st" -na;
 connectAttr "WoodBoard01SG.pa" ":renderPartition.st" -na;
