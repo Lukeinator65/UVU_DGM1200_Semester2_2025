@@ -1,6 +1,6 @@
 //Maya ASCII 2025ff03 scene
 //Name: DockFinal.ma
-//Last modified: Mon, Aug 04, 2025 11:00:37 PM
+//Last modified: Mon, Aug 04, 2025 11:16:52 PM
 //Codeset: 1252
 requires maya "2025ff03";
 requires "stereoCamera" "10.0";
@@ -14,16 +14,16 @@ fileInfo "product" "Maya 2025";
 fileInfo "version" "2025";
 fileInfo "cutIdentifier" "202409190603-cbdc5a7e54";
 fileInfo "osv" "Windows 10 Home v2009 (Build: 19045)";
-fileInfo "UUID" "CBA6F778-435E-8F52-1F73-C791874A7787";
+fileInfo "UUID" "355AC6D9-4391-EDF7-3DEE-8A9DA38E752E";
 createNode transform -s -n "persp";
 	rename -uid "7795DAF6-4F08-397C-2DCB-658507765368";
-	setAttr ".t" -type "double3" 23.121333643450093 22.894695734879225 22.030606179503195 ;
-	setAttr ".r" -type "double3" -35.138352729959408 -316.99999999993406 -2.1744298787477134e-15 ;
+	setAttr ".t" -type "double3" 24.034988468897424 14.258820037131377 15.504059449322604 ;
+	setAttr ".r" -type "double3" -26.1383527299616 -306.59999999992829 0 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "DD7A9B80-4EA5-4D18-2DF3-58AE115D9011";
 	setAttr -k off ".v";
 	setAttr ".fl" 34.999999999999993;
-	setAttr ".coi" 39.183608922932542;
+	setAttr ".coi" 31.589306557927188;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -2486,6 +2486,7 @@ createNode aiAreaLight -n "aiAreaLightShape1" -p "aiAreaLight1";
 	setAttr ".aal" -type "attributeAlias" 4 "exposure" "aiExposure" "normalize" "aiNormalize" ;
 createNode transform -n "aiSkyDomeLight1";
 	rename -uid "59CF217D-46B4-5A80-A93F-6DBD330CABA3";
+	setAttr ".v" no;
 createNode aiSkyDomeLight -n "aiSkyDomeLightShape1" -p "aiSkyDomeLight1";
 	rename -uid "38AB655D-4002-E214-026A-FA8AB0D9E4DB";
 	setAttr -k off ".v";
@@ -24550,6 +24551,7 @@ createNode aiAreaLight -n "aiAreaLightShape2" -p "aiAreaLight2";
 	setAttr ".aal" -type "attributeAlias" 4 "exposure" "aiExposure" "normalize" "aiNormalize" ;
 createNode transform -n "pPlane2";
 	rename -uid "96A26032-4BF7-5FA3-F761-4C950A22F228";
+	setAttr ".v" no;
 	setAttr ".t" -type "double3" -6.3420107112224899 -0.070718324463393323 -7.1729637582631218 ;
 createNode mesh -n "pPlaneShape2" -p "pPlane2";
 	rename -uid "50E952E8-43AC-7A39-A732-BAA9F4B47B26";
