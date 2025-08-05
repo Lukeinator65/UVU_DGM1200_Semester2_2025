@@ -1,6 +1,6 @@
 //Maya ASCII 2025ff03 scene
 //Name: DockFinal.ma
-//Last modified: Mon, Aug 04, 2025 10:27:41 PM
+//Last modified: Mon, Aug 04, 2025 10:41:43 PM
 //Codeset: 1252
 requires maya "2025ff03";
 requires "stereoCamera" "10.0";
@@ -14,16 +14,16 @@ fileInfo "product" "Maya 2025";
 fileInfo "version" "2025";
 fileInfo "cutIdentifier" "202409190603-cbdc5a7e54";
 fileInfo "osv" "Windows 10 Home v2009 (Build: 19045)";
-fileInfo "UUID" "BBED2349-418D-EB32-758C-80913C49AB4B";
+fileInfo "UUID" "2B164599-4D66-52EE-4D27-E1B1345FBF18";
 createNode transform -s -n "persp";
 	rename -uid "7795DAF6-4F08-397C-2DCB-658507765368";
-	setAttr ".t" -type "double3" 12.396391552127513 11.264277528121939 11.952475021279476 ;
-	setAttr ".r" -type "double3" -32.138352729970364 39.799999999974986 0 ;
+	setAttr ".t" -type "double3" 15.471320275188742 14.999994635572714 13.826971212128129 ;
+	setAttr ".r" -type "double3" -35.138352729959408 -316.99999999993406 -2.1744298787477134e-15 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "DD7A9B80-4EA5-4D18-2DF3-58AE115D9011";
 	setAttr -k off ".v";
 	setAttr ".fl" 34.999999999999993;
-	setAttr ".coi" 20.531061828371151;
+	setAttr ".coi" 25.466880571758207;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -163,62 +163,6 @@ createNode mesh -n "Sand_WBShape" -p "Sand_WB";
 	setAttr ".cdvm[0]"  0 1 1;
 	setAttr -s 8 ".pt[0:7]" -type "float3"  5 0.5 -0.5 5 0.5 -0.5 5 0.10454217 
 		-0.5 5 0.10454217 -0.5 5 0.10454217 -0.5 5 0.10454217 -0.5 5 0.5 -0.5 5 0.5 -0.5;
-	setAttr -s 8 ".vt[0:7]"  -3 -0.5 4.5 3 -0.5 4.5 -3 0.5 4.5 3 0.5 4.5
-		 -3 0.5 -4.5 3 0.5 -4.5 -3 -0.5 -4.5 3 -0.5 -4.5;
-	setAttr -s 12 ".ed[0:11]"  0 1 0 2 3 0 4 5 0 6 7 0 0 2 0 1 3 0 2 4 0
-		 3 5 0 4 6 0 5 7 0 6 0 0 7 1 0;
-	setAttr -s 6 -ch 24 ".fc[0:5]" -type "polyFaces" 
-		f 4 0 5 -2 -5
-		mu 0 4 0 1 3 2
-		f 4 1 7 -3 -7
-		mu 0 4 2 3 5 4
-		f 4 2 9 -4 -9
-		mu 0 4 4 5 7 6
-		f 4 3 11 -1 -11
-		mu 0 4 6 7 9 8
-		f 4 -12 -10 -8 -6
-		mu 0 4 1 10 11 3
-		f 4 10 4 6 8
-		mu 0 4 12 0 2 13;
-	setAttr ".cd" -type "dataPolyComponent" Index_Data Edge 0 ;
-	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
-	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
-	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
-createNode transform -n "WoodDock_WB";
-	rename -uid "5B8BF926-4806-FD56-49A6-DBAC33B26C74";
-	setAttr ".v" no;
-	setAttr ".rp" -type "double3" 2 3.0527596473693848 4 ;
-	setAttr ".sp" -type "double3" 2 3.0527596473693848 4 ;
-createNode mesh -n "WoodDock_WBShape" -p "WoodDock_WB";
-	rename -uid "CEE9B5C0-4944-3612-FF05-ACB5269A21EA";
-	setAttr -k off ".v";
-	setAttr ".vir" yes;
-	setAttr ".vif" yes;
-	setAttr -s 6 ".gtag";
-	setAttr ".gtag[0].gtagnm" -type "string" "back";
-	setAttr ".gtag[0].gtagcmp" -type "componentList" 1 "f[2]";
-	setAttr ".gtag[1].gtagnm" -type "string" "bottom";
-	setAttr ".gtag[1].gtagcmp" -type "componentList" 1 "f[3]";
-	setAttr ".gtag[2].gtagnm" -type "string" "front";
-	setAttr ".gtag[2].gtagcmp" -type "componentList" 1 "f[0]";
-	setAttr ".gtag[3].gtagnm" -type "string" "left";
-	setAttr ".gtag[3].gtagcmp" -type "componentList" 1 "f[5]";
-	setAttr ".gtag[4].gtagnm" -type "string" "right";
-	setAttr ".gtag[4].gtagcmp" -type "componentList" 1 "f[4]";
-	setAttr ".gtag[5].gtagnm" -type "string" "top";
-	setAttr ".gtag[5].gtagcmp" -type "componentList" 1 "f[1]";
-	setAttr ".pv" -type "double2" 0.75 0.125 ;
-	setAttr ".uvst[0].uvsn" -type "string" "map1";
-	setAttr -s 14 ".uvst[0].uvsp[0:13]" -type "float2" 0.375 0 0.625 0 0.375
-		 0.25 0.625 0.25 0.375 0.5 0.625 0.5 0.375 0.75 0.625 0.75 0.375 1 0.625 1 0.875 0
-		 0.875 0.25 0.125 0 0.125 0.25;
-	setAttr ".cuvs" -type "string" "map1";
-	setAttr ".dcc" -type "string" "Ambient+Diffuse";
-	setAttr ".covm[0]"  0 1 1;
-	setAttr ".cdvm[0]"  0 1 1;
-	setAttr -s 8 ".pt[0:7]" -type "float3"  5 3.3086286 -0.5 1.6536775 
-		3.3086286 -0.5 5 2.5527596 -0.5 1.6536775 2.5527596 -0.5 5 2.5527596 -0.5 1.6536775 
-		2.5527596 -0.5 5 3.3086286 -0.5 1.6536775 3.3086286 -0.5;
 	setAttr -s 8 ".vt[0:7]"  -3 -0.5 4.5 3 -0.5 4.5 -3 0.5 4.5 3 0.5 4.5
 		 -3 0.5 -4.5 3 0.5 -4.5 -3 -0.5 -4.5 3 -0.5 -4.5;
 	setAttr -s 12 ".ed[0:11]"  0 1 0 2 3 0 4 5 0 6 7 0 0 2 0 1 3 0 2 4 0
@@ -2526,8 +2470,8 @@ createNode camera -n "cameraShape1" -p "camera1";
 	setAttr ".tp" -type "double3" 26.387142035702659 26.521684416688071 22.971330802920946 ;
 createNode transform -n "aiAreaLight1";
 	rename -uid "9F0902B8-433C-5B0F-D199-7D996D092CAC";
-	setAttr ".t" -type "double3" 3.8788879598444517 9.656646292680275 -0.45600260992397779 ;
-	setAttr ".r" -type "double3" -90.138265448152325 0 0 ;
+	setAttr ".t" -type "double3" -3.8719469631810188 9.6774459115615361 8.1631287780333857 ;
+	setAttr ".r" -type "double3" -31.501946744574354 -34.444609175125123 -0.54874032242678072 ;
 	setAttr ".s" -type "double3" 4.190975194596243 4.7924427611129952 2.7135810257665991 ;
 createNode aiAreaLight -n "aiAreaLightShape1" -p "aiAreaLight1";
 	rename -uid "5ADBDF76-49D3-9FB6-C5F6-0FAC4E3F67D5";
@@ -2536,14 +2480,17 @@ createNode aiAreaLight -n "aiAreaLightShape1" -p "aiAreaLight1";
 	setAttr ".csh" no;
 	setAttr ".rcsh" no;
 	setAttr ".sc" -type "float3" 1 1 0.47399998 ;
-	setAttr ".intensity" 6.9230771064758301;
+	setAttr ".intensity" 7;
+	setAttr ".ai_exposure" 2;
 	setAttr ".ai_translator" -type "string" "quad";
 	setAttr ".aal" -type "attributeAlias" 4 "exposure" "aiExposure" "normalize" "aiNormalize" ;
 createNode transform -n "aiSkyDomeLight1";
 	rename -uid "59CF217D-46B4-5A80-A93F-6DBD330CABA3";
+	setAttr ".v" no;
 createNode aiSkyDomeLight -n "aiSkyDomeLightShape1" -p "aiSkyDomeLight1";
 	rename -uid "38AB655D-4002-E214-026A-FA8AB0D9E4DB";
 	setAttr -k off ".v";
+	setAttr ".intensity" 0.5;
 createNode transform -n "Boat";
 	rename -uid "136D1FD7-4B12-EA7D-1991-25A0B7638D17";
 	setAttr ".t" -type "double3" 1.9909401417763721 1.9779872359293214 -1.3337219435064585 ;
@@ -24627,10 +24574,39 @@ createNode mesh -n "WoodBoard01Shape" -p "WoodBoard01";
 	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
+createNode transform -n "aiAreaLight2";
+	rename -uid "F19EE8C2-4009-18BB-B80A-C6A77F3AABFF";
+	setAttr ".t" -type "double3" -1.7248902614051582 8.9756833908774176 -6.6966759823020219 ;
+	setAttr ".r" -type "double3" -27.852398451549213 -136.88329781577212 0 ;
+	setAttr ".s" -type "double3" 3.9209250607689441 2.6281159690503717 1 ;
+createNode aiAreaLight -n "aiAreaLightShape2" -p "aiAreaLight2";
+	rename -uid "A58EF5C1-495D-62C3-364F-0F970721D45F";
+	addAttr -ci true -h true -sn "aal" -ln "attributeAliasList" -dt "attributeAlias";
+	setAttr -k off ".v";
+	setAttr ".csh" no;
+	setAttr ".rcsh" no;
+	setAttr ".intensity" 10;
+	setAttr ".ai_exposure" 5;
+	setAttr ".ai_translator" -type "string" "quad";
+	setAttr ".aal" -type "attributeAlias" 4 "exposure" "aiExposure" "normalize" "aiNormalize" ;
+createNode transform -n "pPlane2";
+	rename -uid "96A26032-4BF7-5FA3-F761-4C950A22F228";
+	setAttr ".v" no;
+	setAttr ".t" -type "double3" -6.3420107112224899 -0.070718324463393323 -7.1729637582631218 ;
+createNode mesh -n "pPlaneShape2" -p "pPlane2";
+	rename -uid "50E952E8-43AC-7A39-A732-BAA9F4B47B26";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
 createNode lightLinker -s -n "lightLinker1";
 	rename -uid "E360FF80-4F3C-D975-4054-6087EF8584CB";
-	setAttr -s 6 ".lnk";
-	setAttr -s 6 ".slnk";
+	setAttr -s 8 ".lnk";
+	setAttr -s 8 ".slnk";
 createNode shapeEditorManager -n "shapeEditorManager";
 	rename -uid "7E1C2649-495B-5E2D-35FC-4DA0534BC6B0";
 createNode poseInterpolatorManager -n "poseInterpolatorManager";
@@ -63972,7 +63948,7 @@ createNode animCurveTU -n "polyExtrudeFace2_reverseAllFaces";
 createNode aiPhysicalSky -n "aiPhysicalSky1";
 	rename -uid "C67F3E3D-4FA2-A123-3589-4E97B7B30984";
 	setAttr ".turbidity" 1.8571428060531616;
-	setAttr ".elevation" 40.178569793701172;
+	setAttr ".elevation" 36.964286804199219;
 	setAttr ".azimuth" 92.142860412597656;
 	setAttr ".sky_tint" -type "float3" 0.667 0.667 1 ;
 	setAttr ".intensity" 2.5160713195800781;
@@ -64084,12 +64060,13 @@ createNode blinn -n "Wood";
 	setAttr ".dc" 0.60000002384185791;
 	setAttr ".c" -type "float3" 0.71799999 0.39183679 0.13354799 ;
 	setAttr ".sc" -type "float3" 0.35664335 0.35664335 0.35664335 ;
-	setAttr ".rfl" 0.20000000298023224;
-	setAttr ".ec" 0.69999998807907104;
+	setAttr ".rfl" 0.05000000074505806;
+	setAttr ".ec" 0.60000002384185791;
+	setAttr ".sro" 0.40000000596046448;
 createNode shadingEngine -n "blinn4SG";
 	rename -uid "BF1B9299-4D5A-6303-81AC-43B63D75BD84";
 	setAttr ".ihi" 0;
-	setAttr -s 13 ".dsm";
+	setAttr -s 12 ".dsm";
 	setAttr ".ro" yes;
 	setAttr -s 2 ".gn";
 createNode materialInfo -n "materialInfo4";
@@ -64097,24 +64074,74 @@ createNode materialInfo -n "materialInfo4";
 createNode groupId -n "groupId15";
 	rename -uid "7838719F-440E-9C54-BDBF-239BFC0C73DA";
 	setAttr ".ihi" 0;
+createNode polyPlane -n "polyPlane2";
+	rename -uid "D7ADE080-44BD-B3D3-CF1E-9EBF1A9D0E95";
+	setAttr ".w" 51.298119263206615;
+	setAttr ".h" 51.298119263206615;
+	setAttr ".sw" 1;
+	setAttr ".sh" 1;
+	setAttr ".cuv" 2;
+createNode lambert -n "lambert3";
+	rename -uid "6B662B9B-4918-746F-487E-68A41631D944";
+	setAttr ".c" -type "float3" 0 0.69229984 1 ;
+createNode shadingEngine -n "lambert3SG";
+	rename -uid "E3A69E6B-4091-DD74-85F7-F8AB47069FB7";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "materialInfo5";
+	rename -uid "EA8BD1A4-4CEC-9894-2969-75AA926D3A56";
+createNode fractal -n "fractal1";
+	rename -uid "465D0D73-4429-AC1A-962D-1A9DB64B370A";
+	setAttr ".cg" -type "float3" 0.35664335 0.35664335 0.35664335 ;
+	setAttr ".co" -type "float3" 0.35664335 0.35664335 0.35664335 ;
+	setAttr ".dc" -type "float3" 0.4125874 0.4125874 0.4125874 ;
+createNode place2dTexture -n "place2dTexture3";
+	rename -uid "D078B14C-4110-F140-81C7-40A2123E31C0";
+createNode lambert -n "Stone";
+	rename -uid "1C53EB0B-4EBF-8E67-90EA-B38E02B2C6C0";
+createNode shadingEngine -n "lambert4SG";
+	rename -uid "365B6A11-44C1-C12E-F3D7-47A5335E1AD3";
+	setAttr ".ihi" 0;
+	setAttr -s 2 ".dsm";
+	setAttr ".ro" yes;
+createNode materialInfo -n "materialInfo6";
+	rename -uid "2569EB55-4A41-E9FD-DCB2-2AAF313C6339";
 createNode nodeGraphEditorInfo -n "hyperShadePrimaryNodeEditorSavedTabsInfo";
-	rename -uid "9474CEEF-4E92-BF64-263C-C38A98F9DBB2";
+	rename -uid "3F3AE7FB-4916-1BB6-1D15-20BA4BC2DE9F";
 	setAttr ".tgi[0].tn" -type "string" "Untitled_1";
-	setAttr ".tgi[0].vl" -type "double2" -578.70410196645184 -500.91179386564772 ;
-	setAttr ".tgi[0].vh" -type "double2" 897.04652183106748 266.38799366097669 ;
-	setAttr -s 4 ".tgi[0].ni";
-	setAttr ".tgi[0].ni[0].x" 158.83200073242188;
-	setAttr ".tgi[0].ni[0].y" -212.1336669921875;
+	setAttr ".tgi[0].vl" -type "double2" -396.90326099240235 -848.98498812055095 ;
+	setAttr ".tgi[0].vh" -type "double2" 1136.9380490015014 -51.481607617585702 ;
+	setAttr -s 10 ".tgi[0].ni";
+	setAttr ".tgi[0].ni[0].x" 167.14285278320312;
+	setAttr ".tgi[0].ni[0].y" -391.42855834960938;
 	setAttr ".tgi[0].ni[0].nvs" 1923;
-	setAttr ".tgi[0].ni[1].x" -127.62466430664062;
-	setAttr ".tgi[0].ni[1].y" 169.82720947265625;
+	setAttr ".tgi[0].ni[1].x" 394.30010986328125;
+	setAttr ".tgi[0].ni[1].y" -314.46353149414062;
 	setAttr ".tgi[0].ni[1].nvs" 1923;
-	setAttr ".tgi[0].ni[2].x" -300.154052734375;
-	setAttr ".tgi[0].ni[2].y" -112.11834716796875;
+	setAttr ".tgi[0].ni[2].x" 158.83200073242188;
+	setAttr ".tgi[0].ni[2].y" -212.1336669921875;
 	setAttr ".tgi[0].ni[2].nvs" 1923;
-	setAttr ".tgi[0].ni[3].x" 179.5181884765625;
+	setAttr ".tgi[0].ni[3].x" -127.62466430664062;
 	setAttr ".tgi[0].ni[3].y" 169.82720947265625;
 	setAttr ".tgi[0].ni[3].nvs" 1923;
+	setAttr ".tgi[0].ni[4].x" 179.5181884765625;
+	setAttr ".tgi[0].ni[4].y" 169.82720947265625;
+	setAttr ".tgi[0].ni[4].nvs" 1923;
+	setAttr ".tgi[0].ni[5].x" -300.154052734375;
+	setAttr ".tgi[0].ni[5].y" -112.11834716796875;
+	setAttr ".tgi[0].ni[5].nvs" 1923;
+	setAttr ".tgi[0].ni[6].x" 714.28570556640625;
+	setAttr ".tgi[0].ni[6].y" 18.571428298950195;
+	setAttr ".tgi[0].ni[6].nvs" 1923;
+	setAttr ".tgi[0].ni[7].x" 407.14285278320312;
+	setAttr ".tgi[0].ni[7].y" 18.571428298950195;
+	setAttr ".tgi[0].ni[7].nvs" 1923;
+	setAttr ".tgi[0].ni[8].x" 900.048095703125;
+	setAttr ".tgi[0].ni[8].y" -222.47990417480469;
+	setAttr ".tgi[0].ni[8].nvs" 1923;
+	setAttr ".tgi[0].ni[9].x" 649.36566162109375;
+	setAttr ".tgi[0].ni[9].y" -296.58419799804688;
+	setAttr ".tgi[0].ni[9].nvs" 1923;
 select -ne :time1;
 	setAttr ".o" 1;
 	setAttr ".unw" 1;
@@ -64126,24 +64153,24 @@ select -ne :hardwareRenderingGlobals;
 	setAttr ".fprt" yes;
 	setAttr ".rtfm" 1;
 select -ne :renderPartition;
-	setAttr -s 6 ".st";
+	setAttr -s 8 ".st";
 select -ne :renderGlobalsList1;
 select -ne :defaultShaderList1;
-	setAttr -s 9 ".s";
+	setAttr -s 11 ".s";
 select -ne :postProcessList1;
 	setAttr -s 2 ".p";
 select -ne :defaultRenderUtilityList1;
-	setAttr -s 2 ".u";
+	setAttr -s 3 ".u";
 select -ne :defaultRenderingList1;
 select -ne :lightList1;
-	setAttr -s 2 ".l";
+	setAttr -s 3 ".l";
 select -ne :defaultTextureList1;
-	setAttr -s 2 ".tx";
+	setAttr -s 3 ".tx";
 select -ne :standardSurface1;
 	setAttr ".bc" -type "float3" 0.40000001 0.40000001 0.40000001 ;
 	setAttr ".sr" 0.5;
 select -ne :initialShadingGroup;
-	setAttr -s 30 ".dsm";
+	setAttr -s 28 ".dsm";
 	setAttr ".ro" yes;
 	setAttr -s 3 ".gn";
 select -ne :initialParticleSE;
@@ -64157,7 +64184,7 @@ select -ne :defaultRenderGlobals;
 select -ne :defaultResolution;
 	setAttr ".pa" 1;
 select -ne :defaultLightSet;
-	setAttr -s 2 ".dsm";
+	setAttr -s 3 ".dsm";
 select -ne :defaultColorMgtGlobals;
 	setAttr ".cfe" yes;
 	setAttr ".cfp" -type "string" "<MAYA_RESOURCES>/OCIO-configs/Maya2022-default/config.ocio";
@@ -71992,18 +72019,23 @@ connectAttr "groupId13.id" "polySurfaceShape7.iog.og[0].gid";
 connectAttr ":initialShadingGroup.mwc" "polySurfaceShape7.iog.og[0].gco";
 connectAttr "groupId14.id" "polySurfaceShape8.iog.og[0].gid";
 connectAttr "blinn4SG.mwc" "polySurfaceShape8.iog.og[0].gco";
+connectAttr "polyPlane2.out" "pPlaneShape2.i";
 relationship "link" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
 relationship "link" ":lightLinker1" ":initialParticleSE.message" ":defaultLightSet.message";
 relationship "link" ":lightLinker1" "blinn1SG.message" ":defaultLightSet.message";
 relationship "link" ":lightLinker1" "WoodBoard01SG.message" ":defaultLightSet.message";
 relationship "link" ":lightLinker1" "lambert2SG.message" ":defaultLightSet.message";
 relationship "link" ":lightLinker1" "blinn4SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "lambert3SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "lambert4SG.message" ":defaultLightSet.message";
 relationship "shadowLink" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
 relationship "shadowLink" ":lightLinker1" ":initialParticleSE.message" ":defaultLightSet.message";
 relationship "shadowLink" ":lightLinker1" "blinn1SG.message" ":defaultLightSet.message";
 relationship "shadowLink" ":lightLinker1" "WoodBoard01SG.message" ":defaultLightSet.message";
 relationship "shadowLink" ":lightLinker1" "lambert2SG.message" ":defaultLightSet.message";
 relationship "shadowLink" ":lightLinker1" "blinn4SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "lambert3SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "lambert4SG.message" ":defaultLightSet.message";
 connectAttr "layerManager.dli[0]" "defaultLayer.id";
 connectAttr "renderLayerManager.rlmi[0]" "defaultRenderLayer.rlid";
 connectAttr ":defaultArnoldDenoiser.msg" ":defaultArnoldRenderOptions.imagers" -na
@@ -72101,32 +72133,61 @@ connectAttr "groupId15.msg" "blinn4SG.gn" -na;
 connectAttr "groupId14.msg" "blinn4SG.gn" -na;
 connectAttr "blinn4SG.msg" "materialInfo4.sg";
 connectAttr "Wood.msg" "materialInfo4.m";
-connectAttr "blinn4SG.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[0].dn"
+connectAttr "lambert3.oc" "lambert3SG.ss";
+connectAttr "pPlaneShape2.iog" "lambert3SG.dsm" -na;
+connectAttr "lambert3SG.msg" "materialInfo5.sg";
+connectAttr "lambert3.msg" "materialInfo5.m";
+connectAttr "place2dTexture3.o" "fractal1.uv";
+connectAttr "place2dTexture3.ofs" "fractal1.fs";
+connectAttr "fractal1.oc" "Stone.c";
+connectAttr "Stone.oc" "lambert4SG.ss";
+connectAttr "ConcreteShell_WBShape.iog" "lambert4SG.dsm" -na;
+connectAttr "lambert4SG.msg" "materialInfo6.sg";
+connectAttr "Stone.msg" "materialInfo6.m";
+connectAttr "fractal1.msg" "materialInfo6.t" -na;
+connectAttr "place2dTexture3.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[0].dn"
 		;
-connectAttr "GasColor.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[1].dn"
+connectAttr "fractal1.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[1].dn"
 		;
-connectAttr "Wood.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[2].dn"
+connectAttr "blinn4SG.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[2].dn"
 		;
-connectAttr "lambert2SG.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[3].dn"
+connectAttr "GasColor.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[3].dn"
+		;
+connectAttr "lambert2SG.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[4].dn"
+		;
+connectAttr "Wood.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[5].dn"
+		;
+connectAttr "lambert3SG.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[6].dn"
+		;
+connectAttr "lambert3.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[7].dn"
+		;
+connectAttr "lambert4SG.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[8].dn"
+		;
+connectAttr "Stone.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[9].dn"
 		;
 connectAttr "blinn1SG.pa" ":renderPartition.st" -na;
 connectAttr "WoodBoard01SG.pa" ":renderPartition.st" -na;
 connectAttr "lambert2SG.pa" ":renderPartition.st" -na;
 connectAttr "blinn4SG.pa" ":renderPartition.st" -na;
+connectAttr "lambert3SG.pa" ":renderPartition.st" -na;
+connectAttr "lambert4SG.pa" ":renderPartition.st" -na;
 connectAttr "OceanColor.msg" ":defaultShaderList1.s" -na;
 connectAttr "blinn3.msg" ":defaultShaderList1.s" -na;
 connectAttr "GasColor.msg" ":defaultShaderList1.s" -na;
 connectAttr "Wood.msg" ":defaultShaderList1.s" -na;
+connectAttr "lambert3.msg" ":defaultShaderList1.s" -na;
+connectAttr "Stone.msg" ":defaultShaderList1.s" -na;
 connectAttr "place2dTexture1.msg" ":defaultRenderUtilityList1.u" -na;
 connectAttr "place2dTexture2.msg" ":defaultRenderUtilityList1.u" -na;
+connectAttr "place2dTexture3.msg" ":defaultRenderUtilityList1.u" -na;
 connectAttr "defaultRenderLayer.msg" ":defaultRenderingList1.r" -na;
 connectAttr "aiAreaLightShape1.ltd" ":lightList1.l" -na;
 connectAttr "aiSkyDomeLightShape1.ltd" ":lightList1.l" -na;
+connectAttr "aiAreaLightShape2.ltd" ":lightList1.l" -na;
 connectAttr "ocean1.msg" ":defaultTextureList1.tx" -na;
 connectAttr "ocean2.msg" ":defaultTextureList1.tx" -na;
-connectAttr "ConcreteShell_WBShape.iog" ":initialShadingGroup.dsm" -na;
+connectAttr "fractal1.msg" ":defaultTextureList1.tx" -na;
 connectAttr "Sand_WBShape.iog" ":initialShadingGroup.dsm" -na;
-connectAttr "WoodDock_WBShape.iog" ":initialShadingGroup.dsm" -na;
 connectAttr "TreePot_WBShape.iog" ":initialShadingGroup.dsm" -na;
 connectAttr "GasPump_WBShape.iog" ":initialShadingGroup.dsm" -na;
 connectAttr "Tree_WBShape.iog" ":initialShadingGroup.dsm" -na;
@@ -72163,4 +72224,5 @@ connectAttr "groupId12.msg" ":initialShadingGroup.gn" -na;
 connectAttr "groupId13.msg" ":initialShadingGroup.gn" -na;
 connectAttr "aiAreaLight1.iog" ":defaultLightSet.dsm" -na;
 connectAttr "aiSkyDomeLight1.iog" ":defaultLightSet.dsm" -na;
+connectAttr "aiAreaLight2.iog" ":defaultLightSet.dsm" -na;
 // End of DockFinal.ma
