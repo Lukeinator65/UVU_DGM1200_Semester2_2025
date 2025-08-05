@@ -1,6 +1,6 @@
 //Maya ASCII 2025ff03 scene
 //Name: DockFinal.ma
-//Last modified: Mon, Aug 04, 2025 10:41:43 PM
+//Last modified: Mon, Aug 04, 2025 10:46:15 PM
 //Codeset: 1252
 requires maya "2025ff03";
 requires "stereoCamera" "10.0";
@@ -14,7 +14,7 @@ fileInfo "product" "Maya 2025";
 fileInfo "version" "2025";
 fileInfo "cutIdentifier" "202409190603-cbdc5a7e54";
 fileInfo "osv" "Windows 10 Home v2009 (Build: 19045)";
-fileInfo "UUID" "2B164599-4D66-52EE-4D27-E1B1345FBF18";
+fileInfo "UUID" "76837B7F-47BC-317E-7533-ECAC391FE1EA";
 createNode transform -s -n "persp";
 	rename -uid "7795DAF6-4F08-397C-2DCB-658507765368";
 	setAttr ".t" -type "double3" 15.471320275188742 14.999994635572714 13.826971212128129 ;
@@ -2486,7 +2486,6 @@ createNode aiAreaLight -n "aiAreaLightShape1" -p "aiAreaLight1";
 	setAttr ".aal" -type "attributeAlias" 4 "exposure" "aiExposure" "normalize" "aiNormalize" ;
 createNode transform -n "aiSkyDomeLight1";
 	rename -uid "59CF217D-46B4-5A80-A93F-6DBD330CABA3";
-	setAttr ".v" no;
 createNode aiSkyDomeLight -n "aiSkyDomeLightShape1" -p "aiSkyDomeLight1";
 	rename -uid "38AB655D-4002-E214-026A-FA8AB0D9E4DB";
 	setAttr -k off ".v";
@@ -24591,7 +24590,6 @@ createNode aiAreaLight -n "aiAreaLightShape2" -p "aiAreaLight2";
 	setAttr ".aal" -type "attributeAlias" 4 "exposure" "aiExposure" "normalize" "aiNormalize" ;
 createNode transform -n "pPlane2";
 	rename -uid "96A26032-4BF7-5FA3-F761-4C950A22F228";
-	setAttr ".v" no;
 	setAttr ".t" -type "double3" -6.3420107112224899 -0.070718324463393323 -7.1729637582631218 ;
 createNode mesh -n "pPlaneShape2" -p "pPlane2";
 	rename -uid "50E952E8-43AC-7A39-A732-BAA9F4B47B26";
@@ -64107,7 +64105,7 @@ createNode shadingEngine -n "lambert4SG";
 createNode materialInfo -n "materialInfo6";
 	rename -uid "2569EB55-4A41-E9FD-DCB2-2AAF313C6339";
 createNode nodeGraphEditorInfo -n "hyperShadePrimaryNodeEditorSavedTabsInfo";
-	rename -uid "3F3AE7FB-4916-1BB6-1D15-20BA4BC2DE9F";
+	rename -uid "862DDC8D-4E53-2F56-9DF5-96AB7C2B7673";
 	setAttr ".tgi[0].tn" -type "string" "Untitled_1";
 	setAttr ".tgi[0].vl" -type "double2" -396.90326099240235 -848.98498812055095 ;
 	setAttr ".tgi[0].vh" -type "double2" 1136.9380490015014 -51.481607617585702 ;
